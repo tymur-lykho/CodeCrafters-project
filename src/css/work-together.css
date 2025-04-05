@@ -1,0 +1,219 @@
+.work-together {
+  position: relative;
+  padding: 32px 0;
+  overflow: hidden;
+}
+.work-together::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/work-together/Glass\ effect\ 2@1x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 77vw;
+  z-index: -1;
+  opacity: 10%;
+}
+
+@media only screen and (min-width: 768px) {
+  .work-together::before {
+    background-position-x: 74vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .work-together::before {
+    background-position-x: 72vw;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .work-together {
+    padding-top: 80px;
+    padding-bottom: 169px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .work-together {
+    padding-inline: 169px;
+  }
+}
+.footer-container {
+}
+.footer-title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  margin-bottom: 63px;
+  max-width: 542px;
+}
+@media only screen and (min-width: 768px) {
+  .footer-title {
+    font-size: 64px;
+    column-gap: 20px;
+    margin-bottom: 18px;
+  }
+}
+.footer-title::before {
+  content: '';
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  background: url(../img/avatar@1x.webp);
+  background-size: cover;
+}
+@media only screen and (min-width: 768px) {
+  .footer-title::before {
+    width: 70px;
+    height: 70px;
+  }
+}
+.accent-word {
+  color: #ed3b44;
+}
+@media only screen and (min-width: 768px) {
+  .footer-form {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    margin-bottom: 18px;
+  }
+}
+.form-label {
+}
+.form-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  padding-bottom: 20px;
+
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-input::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
+}
+
+.form-input#input-comment {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-input#input-comment {
+    margin: 0;
+  }
+}
+
+.form-input:hover,
+.form-input:focus,
+.form-input:focus-visible {
+  border-bottom: 1px solid rgba(250, 250, 250, 0.5);
+  outline: none;
+}
+
+.form-input:not(:placeholder-shown):valid {
+  border-color: #3cbc81;
+}
+
+.form-input:not(:placeholder-shown):valid + .message::before {
+  content: 'Succes!';
+  position: relative;
+  display: block;
+  color: #3cbc81;
+}
+.form-input:not(:placeholder-shown):invalid {
+  border-color: #e74a3b;
+}
+
+.form-input:not(:placeholder-shown):invalid + .message::before {
+  content: 'Invalid email, try again';
+  position: relative;
+  display: block;
+  color: #e74a3b;
+}
+
+.form-btn {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ed3b44;
+
+  font-weight: 500;
+  letter-spacing: -0.02em;
+
+  margin-bottom: 64px;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-btn {
+    width: 150px;
+    height: 150px;
+
+    margin: 0;
+  }
+}
+.form-btn:hover,
+.form-btn:focus {
+  background-color: #e0373f;
+}
+.footer-contact-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+@media only screen and (min-width: 768px) {
+  .footer-contact-list {
+    gap: 8px;
+  }
+}
+.contact-item {
+}
+.contact-link {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+
+  padding: 10px 12px;
+  border-radius: 60px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+}
+@media only screen and (min-width: 768px) {
+  .contact-link {
+    font-size: 16px;
+    padding: 18px 32px;
+  }
+}
+.contact-link:hover,
+.contact-link:focus {
+  border-color: #fafafa;
+}
