@@ -1,0 +1,189 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('/img/hero/portfolio_1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  text-align: center;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+  }
+}
+.hero-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('/img/hero/glass_effect_1.webp');
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 1024px) {
+  .hero-overlay {
+    width: 100%;
+    height: 50%;
+    background-position: top;
+  }
+}
+.hero-content {
+  z-index: 2;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    width: 100%;
+    padding: 40px 5%;
+    text-align: center;
+  }
+}
+
+.hero-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 90px;
+  }
+}
+
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .social-icons {
+    flex-direction: row;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .social-icons {
+    flex-direction: row;
+    bottom: 40px;
+    right: 40px;
+  }
+}
+
+.social-icons li a {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 60px;
+  padding: 18px;
+  width: 55px;
+  height: 55px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.social-icons li a.email {
+  width: auto;
+  min-width: 223px;
+  height: auto;
+  padding: 18px 24px;
+  border-radius: 60px;
+}
+.social-link:hover,
+.social-link:focus {
+  background: white;
+  color: #e43131;
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.email:hover,
+.email:focus {
+  background: white;
+  color: #e43131;
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-content {
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.animate-title {
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.animate-icons {
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.animate-email {
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
