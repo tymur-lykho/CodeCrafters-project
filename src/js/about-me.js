@@ -2,14 +2,30 @@ import accordion from "accordion-js";
 import "accordion-js/dist/accordion.min.css";
 
 
-  const items = document.querySelectorAll(".accordion-item");
-  items.forEach((item) => {
-    const header = item.querySelector(".accordion-header");
-    header.addEventListener("click", () => {
-      items.forEach((i) => i.classList.remove("active"));
-      item.classList.add("active");
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const accordionItem = header.closest('.accordion-item');
+      const icon = header.querySelector('.accordion-icon');
+
+      // Закрити, якщо активний
+      if (accordionItem.classList.contains('active')) {
+        accordionItem.classList.remove('active');
+        icon.src = '../img/about-me/arrow-down.svg';
+      } else {
+        // Закрити всі інші (якщо потрібно)
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('active');
+          const itemIcon = item.querySelector('.accordion-icon');
+          if (itemIcon) itemIcon.src = '../img/about-me/arrow-down.svg';
+        });
+
+        // Відкрити поточний
+        accordionItem.classList.add('active');
+        icon.src = '../img/about-me/arrow-up.svg';
+      }
     });
   });
+
 
 //   // Swiper
 //   const swiper = new Swiper(".swiper", {
