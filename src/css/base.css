@@ -1,29 +1,18 @@
 :root {
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   font-family: 'Inter Tight', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
   font-weight: 500;
 
   color: #fafafa;
   background-color: #1c1d20;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
   margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .visually-hidden {
