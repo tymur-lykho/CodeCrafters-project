@@ -1,0 +1,134 @@
+.about-me{
+    background-color: #1c1d20;
+    padding: 0px 32px;
+}
+
+.about-me-div {
+    display: flex;
+    gap: 16px;
+    width: 1376px;
+    height: 700px;
+   
+}
+
+.about-me-introduction {
+   background-color: #242527;
+   padding: 64px 64px 436px;
+   border-radius: 24px;
+   width: 680px;
+   height: 700px;
+}
+  
+.about-me-content {
+  font-family: sans-serif;
+  font-weight: 500px;
+  font-size: 38px;
+  line-height: 105%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color:  #fafafa;
+  
+}
+  
+.about-me-span1{
+  color:  #ed3b44;
+}
+
+.about-me-span2{
+  color: rgba(250, 250, 250, 0.4);
+}
+
+.about-me-img {
+  object-fit: cover;
+  border-radius: 24px;
+  max-width: 680px;
+  max-height: 700px;
+}
+
+
+
+
+
+
+.accordion {
+  list-style: none;
+  padding: 96px 0 96px;
+  background-color: #1c1d20;
+    
+}
+  
+.accordion-item {
+  border-bottom: 1px solid #333;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+  
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  
+}
+
+.accordion-span-active{
+  padding-bottom: 16px;
+}
+
+.accordion-span{
+  padding-top: 32px;
+  padding-bottom: 48px;
+
+}  
+
+
+.accordion-icon{
+   transition: transform 0.3s ease;
+   border: 1px solid rgba(250, 250, 250, 0.2);
+   border-radius: 100px;
+   padding: 10px;
+   width: 40px;
+   height: 40px;
+  
+}
+  
+.accordion-item.active .accordion-header::after {
+    transform: rotate(-180deg);
+}
+  
+.accordion-body {
+    display: none;
+    color:  #fafafa;
+    background-color: #1c1d20;
+    font-family: var(--font-family);
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 150%;
+   letter-spacing: -0.02em;
+   color: #fafafa;;
+   padding: 0px 68px 32px 696px;
+}
+
+.accordion-item.active .accordion-body {
+    display: block;
+}
+   
+.accordion-text{
+    padding-bottom: 26px;
+}
+
+.accordion-list:not(:first-child) {
+    padding-top: 10px;
+}
