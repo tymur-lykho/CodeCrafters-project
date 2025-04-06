@@ -1,9 +1,9 @@
-.About-me{
+.about-me{
     background-color: #1c1d20;
     padding: 0px 32px;
 }
 
-.About-me-div {
+.about-me-div {
     display: flex;
     gap: 16px;
     width: 1376px;
@@ -11,7 +11,7 @@
    
 }
 
-.About-me-introduction {
+.about-me-introduction {
    background-color: #242527;
    padding: 64px 64px 436px;
    border-radius: 24px;
@@ -19,7 +19,7 @@
    height: 700px;
 }
   
-.About-me-content {
+.about-me-content {
   font-family: sans-serif;
   font-weight: 500px;
   font-size: 38px;
@@ -30,15 +30,15 @@
   
 }
   
-.About-me-span1{
+.about-me-span1{
   color:  #ed3b44;
 }
 
-.About-me-span2{
+.about-me-span2{
   color: rgba(250, 250, 250, 0.4);
 }
 
-.About-me-img {
+.about-me-img {
   object-fit: cover;
   border-radius: 24px;
   max-width: 680px;
