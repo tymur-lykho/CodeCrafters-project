@@ -2,9 +2,14 @@
 .covers {
   position: relative;
 }
+.covers-container {
+  padding: 0;
+  margin: 0;
+  max-width: 100vw;
+}
 /* edit by Tymur .marquee */
 .covers-box {
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   right: -800px;
   /* edit by Tymur */
