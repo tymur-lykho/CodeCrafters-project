@@ -1,33 +1,6 @@
 .work-together {
   position: relative;
   padding: 32px 0;
-  overflow: hidden;
-}
-.work-together::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(../img/work-together/Glass\ effect\ 2@1x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: 77vw;
-  z-index: -1;
-  opacity: 10%;
-}
-
-@media only screen and (min-width: 768px) {
-  .work-together::before {
-    background-position-x: 74vw;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .work-together::before {
-    background-position-x: 72vw;
-  }
 }
 @media only screen and (min-width: 768px) {
   .work-together {
@@ -35,13 +8,47 @@
     padding-bottom: 169px;
   }
 }
-@media only screen and (min-width: 1440px) {
-  .work-together {
-    padding-inline: 169px;
+
+.work-together::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/work-together/Glass-effect-2@1x.webp);
+  background-repeat: no-repeat;
+  background-size: auto;
+  backdrop-filter: blur(10px);
+  background-position-x: 77vw;
+  opacity: 10%;
+  z-index: -1;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .work-together::before {
+    background-image: url(../img/work-together/Glass-effect-2@2x.webp);
   }
 }
-.footer-container {
+@media only screen and (min-width: 768px) {
+  .work-together::before {
+    background-position-x: 74vw;
+  }
 }
+@media only screen and (min-width: 1440px) {
+  .work-together::before {
+    background-position-x: 72vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer-container {
+    padding-left: 188px;
+    padding-right: 204px;
+  }
+}
+
 .footer-title {
   display: inline-flex;
   flex-wrap: wrap;
@@ -62,13 +69,21 @@
     margin-bottom: 18px;
   }
 }
+
 .footer-title::before {
   content: '';
   display: inline-flex;
   width: 44px;
   height: 44px;
-  background: url(../img/avatar@1x.webp);
+  background-image: url(../img/avatar@1x.webp);
   background-size: cover;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .footer-title::before {
+    background-image: url(../img/avatar@2x.webp);
+  }
 }
 @media only screen and (min-width: 768px) {
   .footer-title::before {
@@ -76,22 +91,61 @@
     height: 70px;
   }
 }
+
 .accent-word {
   color: #ed3b44;
+}
+
+.footer-form {
+  width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .footer-form {
     display: flex;
     align-items: center;
-    gap: 32px;
+    justify-content: space-between;
 
     margin-bottom: 18px;
   }
 }
-.form-label {
+@media only screen and (min-width: 1440px) {
+  .footer-form {
+    justify-content: flex-start;
+    gap: 86px;
+  }
 }
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 768px) {
+  .input-wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .input-wrap {
+    flex-grow: 1;
+  }
+}
+
+.form-label {
+  width: 100%;
+  position: relative;
+}
+
 .form-input {
   width: 100%;
+  min-width: 245px;
+  max-width: 390px;
+
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
@@ -108,7 +162,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .form-input::placeholder {
   font-weight: 500;
   font-size: 16px;
@@ -116,43 +169,34 @@
   letter-spacing: -0.02em;
   color: rgba(250, 250, 250, 0.6);
 }
-
-.form-input#input-comment {
-  margin-top: 16px;
-  margin-bottom: 32px;
-}
-
-@media only screen and (min-width: 768px) {
-  .form-input#input-comment {
-    margin: 0;
-  }
-}
-
 .form-input:hover,
 .form-input:focus,
 .form-input:focus-visible {
   border-bottom: 1px solid rgba(250, 250, 250, 0.5);
   outline: none;
 }
+.form-input:not(:placeholder-shown) {
+  border-bottom: 1px solid rgba(250, 250, 250, 0.5);
+}
 
-.form-input:not(:placeholder-shown):valid {
+.email-label:not(:placeholder-shown):valid {
   border-color: #3cbc81;
 }
-
-.form-input:not(:placeholder-shown):valid + .message::before {
-  content: 'Succes!';
-  position: relative;
-  display: block;
-  color: #3cbc81;
-}
-.form-input:not(:placeholder-shown):invalid {
+.email-label:not(:placeholder-shown):invalid {
   border-color: #e74a3b;
 }
-
-.form-input:not(:placeholder-shown):invalid + .message::before {
+.email-label:has(.form-input:not(:placeholder-shown):valid)::before {
+  content: 'Success!';
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  color: #3cbc81;
+}
+.email-label:has(.form-input:not(:placeholder-shown):invalid)::before {
   content: 'Invalid email, try again';
-  position: relative;
-  display: block;
+  position: absolute;
+  bottom: -24px;
+  left: 0;
   color: #e74a3b;
 }
 
@@ -170,8 +214,8 @@
   letter-spacing: -0.02em;
 
   margin-bottom: 64px;
+  padding: 0;
 }
-
 @media only screen and (min-width: 768px) {
   .form-btn {
     width: 150px;
@@ -184,6 +228,7 @@
 .form-btn:focus {
   background-color: #e0373f;
 }
+
 .footer-contact-list {
   display: flex;
   align-items: center;
@@ -195,8 +240,7 @@
     gap: 8px;
   }
 }
-.contact-item {
-}
+
 .contact-link {
   display: block;
   font-weight: 500;
