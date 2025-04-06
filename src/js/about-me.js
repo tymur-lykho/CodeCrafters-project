@@ -1,30 +1,48 @@
 import accordion from "accordion-js";
 import "accordion-js/dist/accordion.min.css";
 
+document.querySelectorAll('.accordion-item').forEach((item) => {
+  const button = item.querySelector('.accordion-header');
+  const icon = item.querySelector('.accordion-icon');
+  const body = item.querySelector('.accordion-body');
 
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const accordionItem = header.closest('.accordion-item');
-      const icon = header.querySelector('.accordion-icon');
+  // const setArrow = (iconEl, isOpen) => {
+  //   iconEl.src = isOpen 
+  //     ? '../img/about-me/arrow-up.svg' 
+  //     : '../img/about-me/arrow-down.svg';
+  // };
 
-      // Закрити, якщо активний
-      if (accordionItem.classList.contains('active')) {
-        accordionItem.classList.remove('active');
-        icon.src = '../img/about-me/arrow-down.svg';
-      } else {
-        // Закрити всі інші (якщо потрібно)
-        document.querySelectorAll('.accordion-item').forEach(item => {
-          item.classList.remove('active');
-          const itemIcon = item.querySelector('.accordion-icon');
-          if (itemIcon) itemIcon.src = '../img/about-me/arrow-down.svg';
-        });
+  setArrow(icon, item.classList.contains('active'));
 
-        // Відкрити поточний
-        accordionItem.classList.add('active');
-        icon.src = '../img/about-me/arrow-up.svg';
-      }
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isActive = item.classList.contains('active');
+
+    document.querySelectorAll('.accordion-item').forEach((el) => {
+      el.classList.remove('active');
+      const elIcon = el.querySelector('.accordion-icon');
+      if (elIcon) setArrow(elIcon, false);
     });
+
+    if (!isActive) {
+      item.classList.add('active');
+      setArrow(icon, true);
+    }
   });
+
+  body.addEventListener('click', () => {
+    if (item.classList.contains('active')) {
+      item.classList.remove('active');
+
+      
+      document.querySelectorAll('.accordion-item').forEach((el) => {
+        const elIcon = el.querySelector('.accordion-icon');
+        if (elIcon) setArrow(elIcon, el.classList.contains('active'));
+      });
+    }
+  });
+});
+
 
 
 //   // Swiper
