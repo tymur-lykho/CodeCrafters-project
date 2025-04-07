@@ -1,14 +1,14 @@
 <section class="about-me">
- <container class="snake-case">
+ <container class="container">
     <!-- Прихований заголовок -->
     <h1 class="visually-hidden">About Lloyd Jefferson – Frontend Developer Portfolio</h1>
   
-    <div class="about-me-div">
+    <div class="about-me-section">
       <div class="about-me-introduction">
         <p class="about-me-content">
           I work with people all over the world to create impressive and 
-          <span class="about-me-span1">functional</span> 
-          <span class="about-me-span2">websites</span> that reflect each client's unique personality.
+          <span class="accent-word-red ">functional</span> 
+          <span class="accent-word-grey">websites</span> that reflect each client's unique personality.
         </p>
       </div>
       <!-- Контентне зображення -->
@@ -18,16 +18,24 @@
     <!-- Accordion секції -->
     <ul class="accordion">
       <li class="accordion-item active">
-            <button class="accordion-header ">  <span class="accordion-span">About Me</span>
-            <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" /></button>
+        <div class="accordion-line">
+           <h3 class="accordion-title">About Me</h3>
+            <button class="accordion-header ">  
+            <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" />
+          </button>
+        </div>
         <div class="accordion-body">
           <p class="accordion-text">I am Lloyd Jefferson, a talented programmer with extensive expertise in software development. I have an understanding of different programming languages and technologies, always ready to improve my skills. I always follow the latest trends and look for unconventional, creative solutions to problems. I have a high level of analytical skills and am able to effectively solve even the most difficult tasks encountered on the way.</p>
-          <p>Able to work both independently and in a team. I can effectively cooperate with colleagues, exchanging ideas and finding optimal solutions. Professional maturity allows you to calmly cope with challenges and stressful situations, while maintaining a high quality of work. I am always looking for opportunities for self-improvement. I actively study new technologies and practices to stay abreast of the latest innovations. I have a strong understanding of various programming languages, frameworks and architectural concepts that allow me to create efficient and scalable software.</p>
+          <p class="ccordion-text">Able to work both independently and in a team. I can effectively cooperate with colleagues, exchanging ideas and finding optimal solutions. Professional maturity allows you to calmly cope with challenges and stressful situations, while maintaining a high quality of work. I am always looking for opportunities for self-improvement. I actively study new technologies and practices to stay abreast of the latest innovations. I have a strong understanding of various programming languages, frameworks and architectural concepts that allow me to create efficient and scalable software.</p>
         </div>
       </li>
       <li class="accordion-item active">
-        <button class="accordion-header">  <span class="accordion-span">Role</span>
-            <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" /></button>
+        <div class="accordion-line">
+          <h3 class="accordion-title">Role</h3>
+           <button class="accordion-header ">  
+           <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" />
+         </button>
+       </div>
         <div class="accordion-body ">
           <ul>
             <li class="accordion-list">Frontend development</li>
@@ -37,8 +45,12 @@
         </div>
       </li>
       <li class="accordion-item active">
-        <button class="accordion-header"> <span class="accordion-span">Education</span>
-            <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" /></button>
+        <div class="accordion-line">
+          <h3 class="accordion-title">Education</h3>
+           <button class="accordion-header ">  
+           <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" />
+         </button>
+       </div>
         <div class="accordion-body">
           <ul >
             <li class="accordion-list">2018 - 2019 / Frontend Development Diploma, GoIT</li>
@@ -50,6 +62,38 @@
     </ul>
   
     <!-- Swiper для навичок -->
+
+    <div class="swiper" role="region" aria-label="Слайдер навичок">
+      <div class="swiper-wrapper">
+        <!-- Кожен <li> повинен бути окремим слайдом -->
+        <div class="swiper-slide"><ul class="skill-list"><li class="swiper-item active">HTML/CSS</li></ul></div>
+        <div class="swiper-slide"><ul class="skill-list"><li class="swiper-item">JavaScript</li></ul></div>
+        <div class="swiper-slide"><ul class="skill-list"><li class="swiper-item">React</li></ul></div>
+        <div class="swiper-slide"><ul class="skill-list"><li class="swiper-item">Node.js</li></ul></div>
+        <div class="swiper-slide"><ul class="skill-list"><li class="swiper-item">React Native</li></ul></div>
+        <div class="swiper-slide"><ul class="skill-list"><li class="swiper-item">Soft skills</li></ul></div>
+      </div>
+
+      <div>
+        <button type="button" class="arrow-btn">
+        <svg class="projects-icon" width="25" height="24">
+          <use href="./img/projects/symbol-defs.svg#icon-arrow-right2"></use>
+        </svg>
+      </button></div>
+  
+      <!-- Кнопки навігації -->
+      <!-- <div class="swiper-button-next" tabindex="0" role="button" aria-label="Наступний навик"></div>
+      <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Попередній навик"></div> -->
+    </div>
+
+
+
+
+
+
+
+
+
     <!-- <div class="skills-slider swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">HTML/CSS</div>
