@@ -1,8 +1,9 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+import { showThankWindow } from './modal-window';
 
 const form = document.getElementById('js-footer-form');
-const thankWindow = document.querySelector('thank-window');
 
 form.addEventListener('submit', handleFormSubmit);
 
@@ -12,13 +13,11 @@ async function handleFormSubmit(event) {
   const email = form.elements['input-email'].value.trim();
   const comment = form.elements['input-comment'].value.trim();
 
-  console.log(email, comment);
-
   const response = await sendMail(email, comment).catch(e => {
     iziToast.error({
       title: 'Sending error',
-      position: 'topRight',
-      message: 'Sorry!',
+      position: 'bottomCenter',
+      message: 'Sorry, something went wrong, try again later.',
     });
   });
   if (!response) return;
@@ -35,8 +34,4 @@ async function sendMail(email, comment) {
   } catch (error) {
     throw new Error(error);
   }
-}
-
-function showThankWindow(data) {
-  thankWindow.classList.add('is-open');
 }
