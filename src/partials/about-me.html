@@ -1,9 +1,9 @@
 <section class="about-me">
   <div class="container">
     <!-- Прихований заголовок -->
-    <h1 class="visually-hidden">
+    <h2 class="visually-hidden">
       About Lloyd Jefferson – Frontend Developer Portfolio
-    </h1>
+    </h2>
 
     <div class="about-me-section">
       <div class="about-me-introduction">
@@ -105,59 +105,90 @@
       </li>
     </ul>
 
-    <!-- Swiper для навичок -->
-
-    <div class="swiper" role="region" aria-label="Слайдер навичок">
-      <div class="swiper-wrapper">
-        <!-- Кожен <li> повинен бути окремим слайдом -->
-        <div class="swiper-slide">
-          <ul class="skill-list">
-            <li class="swiper-item active">HTML/CSS</li>
+    
+    <div class="swiper skils" role="region" aria-label="Слайдер навичок">
+      <div class="swiper-wrapper skils-wrapper">
+        <ul class="skills-list">
+          <li class="swiper-item skils-item active ">HTML/CSS</li>
+          <li class="swiper-item skils-item  ">JavaScript</li>
+          <li class="swiper-item skils-item  ">React</li>
+          <li class="swiper-item skils-item  ">Node.js</li>
+          <li class="swiper-item skils-item  ">React Native</li>
+          <li class="swiper-item skils-item ">Soft skills</li>
           </ul>
-        </div>
-        <div class="swiper-slide">
-          <ul class="skill-list">
-            <li class="swiper-item">JavaScript</li>
-          </ul>
-        </div>
-        <div class="swiper-slide">
-          <ul class="skill-list">
-            <li class="swiper-item">React</li>
-          </ul>
-        </div>
-        <div class="swiper-slide">
-          <ul class="skill-list">
-            <li class="swiper-item">Node.js</li>
-          </ul>
-        </div>
-        <div class="swiper-slide">
-          <ul class="skill-list">
-            <li class="swiper-item">React Native</li>
-          </ul>
-        </div>
-        <div class="swiper-slide">
-          <ul class="skill-list">
-            <li class="swiper-item">Soft skills</li>
-          </ul>
-        </div>
       </div>
-
-      <!-- Кнопки навігації -->
-      <!-- <div class="swiper-button-next" tabindex="0" role="button" aria-label="Наступний навик"></div>
-      <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Попередній навик"></div> -->
-    </div>
-
-    <!-- <div class="skills-slider swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">HTML/CSS</div>
-        <div class="swiper-slide">JavaScript</div>
-        <div class="swiper-slide">React</div>
-        <div class="swiper-slide">Node.js</div>
-        <div class="swiper-slide">React Native</div>
-        <div class="swiper-slide">Soft skills</div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div> -->
+      <button type="button" class="reviews-btn-next">
+        <svg class="icon-reviews-arrow" width="24" height="24">
+          <use href="../img/projects/symbol-defs.svg#icon-arrow-right2"></use>
+        </svg>
+      </button>
+    </div>  
   </div>
 </section>
+
+
+
+   <!-- Кожен <li> повинен бути окремим слайдом -->
+    <!-- <div class="swiper-slide">
+      <ul class="skill-list">
+        <li class="swiper-item active">HTML/CSS</li>
+      </ul>
+    </div>
+    <div class="swiper-slide">
+      <ul class="skill-list">
+        <li class="swiper-item">JavaScript</li>
+      </ul>
+    </div>
+    <div class="swiper-slide">
+      <ul class="skill-list">
+        <li class="swiper-item">React</li>
+      </ul>
+    </div>
+    <div class="swiper-slide">
+      <ul class="skill-list">
+        <li class="swiper-item">Node.js</li>
+      </ul>
+    </div>
+    <div class="swiper-slide">
+      <ul class="skill-list">
+        <li class="swiper-item">React Native</li>
+      </ul>
+    </div>
+    <div class="swiper-slide">
+      <ul class="skill-list">
+        <li class="swiper-item">Soft skills</li>
+      </ul>
+    </div>
+    <button type="button" class="reviews-btn-next">
+      <svg class="icon-reviews-arrow" width="24" height="24">
+        <use href="../img/projects/symbol-defs.svg#icon-arrow-right2"></use>
+      </svg>
+    </button> -->
+
+
+    <!-- <div class="swiper skills-swiper" role="region" aria-label="Слайдер навичок">
+      <div class="swiper-wrapper">
+        <ul class="swiper-slide skill-list">
+          <li class="skill-item">HTML/CSS</li>
+        </ul>
+        <ul class="swiper-slide skill-list">
+          <li class="skill-item">JavaScript</li>
+        </ul>
+        <ul class="swiper-slide skill-list">
+          <li class="skill-item">React</li>
+        </ul>
+        <ul class="swiper-slide skill-list">
+          <li class="skill-item">Node.js</li>
+        </ul>
+        <ul class="swiper-slide skill-list">
+          <li class="skill-item">React Native</li>
+        </ul>
+        <ul class="swiper-slide skill-list">
+          <li class="skill-item">Soft skills</li>
+        </ul>
+      </div>
+      <button type="button" class="wiper-button-next">
+        <svg class="icon-reviews-arrow" width="24" height="24">
+          <use href="../img/projects/symbol-defs.svg#icon-arrow-right2"></use>
+        </svg>
+      </button> -->
