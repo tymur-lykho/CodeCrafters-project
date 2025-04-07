@@ -129,23 +129,6 @@
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.menu-link::after {
-  content: '';
-  position: absolute;
-  bottom: 7px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  width: calc(100% - 2 * 10px);
-  height: 1px;
-  background-color: #fafafa;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.menu-link:hover::after,
-.menu-link:focus::after,
-.menu-link:active::after {
-  background-color: rgb(237, 59, 68);
-}
 
 .menu-link:hover {
   color: rgb(237, 59, 68);
@@ -171,6 +154,11 @@
   align-items: center;
   animation-duration: 1s;
   animation-name: slidein;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  padding: 20px;
 }
 
 .visually-hidden {
@@ -344,11 +332,6 @@
 .mobail-list-item-link:active {
   color: rgb(237, 59, 68);
 }
-
-.mobail-order-btn-box {
-  margin-bottom: 64px;
-}
-
 .mobail-order-btn {
   display: flex;
   width: 174px;
@@ -357,13 +340,13 @@
   border-radius: 60px;
   color: rgb(250, 250, 250);
   background: rgb(237, 59, 68);
-  margin-left: auto;
   font-family: 'Inter Tight';
   font-size: 16px;
   font-weight: 500;
   line-height: 1.19;
   letter-spacing: -0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: auto;
 }
 
 .mobail-order-btn:hover {
