@@ -1,0 +1,119 @@
+.reviews-container {
+    margin: 64px auto;
+}
+@media only screen and (min-width: 768px) {
+.reviews-container {
+        margin: 96px auto;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .reviews-container {
+        margin: 164px auto;
+    }
+}
+.title {
+    font-size: 16px;
+    font-weight: 600;       
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: rgba(250, 250, 250, 0.4);
+    
+}
+
+.reviews-list {    
+    display: flex;
+    list-style-type: none;
+    margin: 32px auto;
+}
+.review-item {
+    display: flex;
+    flex-direction: column;
+       
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    border-radius: 20px;
+    padding: 32px 24px;
+    width: 332px;
+    height: auto !important;        
+}
+
+
+.review-img {
+    border-radius: 10px;
+    margin-bottom: 32px;
+}
+.review-author {    
+    font-weight: 600;
+    font-size: 20px;    
+    letter-spacing: -0.02em;    
+    margin-bottom: 8px;    
+}
+.review-text {    
+    letter-spacing: -0.02em;
+    color: rgba(250, 250, 250, 0.6);    
+}
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 32px;
+    margin: 0 auto;
+    border: none;
+}
+
+/*Контейнер для стрілок*/
+.arrows-container {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;   
+}
+@media only screen and (min-width: 768px) {
+    .arrows-container {
+        gap: 20px;
+    }
+}
+.reviews-btn-prev, 
+.reviews-btn-next {  
+        
+    background-color: transparent;   
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(250, 250, 250, 0.5);
+    border-radius: 60px;
+    padding: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+    .reviews-btn-prev,
+    .reviews-btn-next {
+        width: 68px;
+        height: 68px;
+        padding: 18px;
+    }
+}
+
+.reviews-btn-prev {
+transform: rotate(-180deg);
+}
+
+.icon-reviews-arrow {
+    fill: #fafafa;
+    stroke: none !important;
+}
+@media only screen and (min-width: 768px) {
+    .icon-reviews-arrow {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.disabled {
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    cursor: default;
+
+    .icon-reviews-arrow {
+        fill: #3b3b3b;
+    }
+}
