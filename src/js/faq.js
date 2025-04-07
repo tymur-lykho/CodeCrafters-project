@@ -1,19 +1,24 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const accordionButtons = document.querySelectorAll('.acc-btn');
+document.querySelectorAll('.accordion-item-faq').forEach(item => {
+  const btn = item.querySelector('.acc-btn');
+  const content = item.querySelector('.accordion-content');
+  const icon = item.querySelector('.acc-icon');
 
-  accordionButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const accordionItem = this.closest('.accordion-item');
-      const content = accordionItem.querySelector('.accordion-content');
+  // Ховаємо контент одразу
+  content.style.maxHeight = '0';
+  content.style.overflow = 'hidden';
+  content.style.transition = 'max-height 0.3s ease';
 
-      // Перемикаємо клас для відкриття/закриття
-      accordionItem.classList.toggle('active');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
 
-      if (accordionItem.classList.contains('active')) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else {
-        content.style.maxHeight = '0';
-      }
-    });
+    if (isOpen) {
+      item.classList.remove('open');
+      content.style.maxHeight = '0';
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      item.classList.add('open');
+      content.style.maxHeight = content.scrollHeight + 'px';
+      icon.style.transform = 'rotate(180deg)';
+    }
   });
 });
