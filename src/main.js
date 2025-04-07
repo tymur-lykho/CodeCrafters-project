@@ -6,3 +6,4 @@ import './js/projects';
 import './js/reviews';
 import './js/work-together';
 import './js/modal-window';
+import "./js/hero";
