@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Анімація для overlay
+
     const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
             document.querySelector('.overlay-image').classList.add('visible');
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.2 });
     observer.observe(document.querySelector('.hero'));
 
-    // Генерація заголовка з рядками
+
     const title = document.querySelector(".hero-title");
     const lines = [
         "HELLO.",

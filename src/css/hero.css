@@ -1,43 +1,14 @@
 .hero {
   position: relative;
-  /* width: 100%; */
-  /* height: 100vh; */
-  /* background: url('/img/hero/rectangle_mobile@1x.webp') no-repeat center / cover; */
   background: linear-gradient(
     270deg,
     rgba(28, 29, 32, 1) 50%,
     rgba(105, 41, 45, 1) 68%,
     rgba(237, 59, 68, 1) 100%
   );
-  /* overflow: hidden; */
+
   padding-top: 281px;
   padding-bottom: 32px;
-}
-
-@media (min-resolution: 2dppx) {
-  .hero {
-    /* background-image: url('/img/hero/rectangle_mobile@2x.webp'); */
-  }
-}
-@media (min-width: 768px) {
-  .hero {
-    /* background-image: url('/img/hero/rectangle_tablet@1x.webp'); */
-  }
-  @media (min-resolution: 2dppx) {
-    .hero {
-      /* background-image: url('/img/hero/rectangle_tablet@2x.webp'); */
-    }
-  }
-}
-@media (min-width: 1440px) {
-  .hero {
-    /* background-image: url('/img/hero/rectangle_desktop@1x.webp'); */
-  }
-  @media (min-resolution: 2dppx) {
-    .hero {
-      /* background-image: url('/img/hero/rectangle_desktop@2x.webp'); */
-    }
-  }
 }
 
 .overlay-image {
@@ -46,7 +17,7 @@
   left: 0;
   height: 100%;
   width: 90%;
-  background: url('/img/hero/glass_mobile@1x.webp') no-repeat left / cover;
+  background: url('/img/hero/glass-hero.webp') no-repeat left / cover;
   z-index: 1;
   transform: translateX(-100%);
   transition: transform 1.2s ease-in-out;
@@ -56,28 +27,28 @@
 }
 @media (min-resolution: 2dppx) {
   .overlay-image {
-    background-image: url('/img/hero/glass_mobile@2x.webp');
+    background-image: url('/img/hero/glass-hero.webp');
   }
 }
 @media (min-width: 768px) {
   .overlay-image {
     width: 70%;
-    background-image: url('/img/hero/glass_tablet@1x.webp');
+    background-image: url('/img/hero/glass-hero.webp');
   }
   @media (min-resolution: 2dppx) {
     .overlay-image {
-      background-image: url('/img/hero/glass_tablet@2x.webp');
+      background-image: url('/img/hero/glass-hero.webp');
     }
   }
 }
 @media (min-width: 1440px) {
   .overlay-image {
     width: 50%;
-    background-image: url('/img/hero/glass_desktop@1x.webp');
+    background-image: url('/img/hero/glass-hero.webp');
   }
   @media (min-resolution: 2dppx) {
     .overlay-image {
-      background-image: url('/img/hero/glass_desktop@2x.webp');
+      background-image: url('/img/hero/glass-hero.webp');
     }
   }
 }
@@ -85,24 +56,8 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  /* height: 100%; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
-  /* padding: 40px 20px; */
 }
-@media (min-width: 768px) {
-  .hero-content {
-    /* padding: 80px 32px; */
-  }
-}
-@media (min-width: 1440px) {
-  .hero-content {
-    /* padding: 100px; */
-    /* max-width: 1200px;
-    margin: 0 auto; */
-  }
-}
+
 .hero-title {
   color: #fafafa;
   text-transform: uppercase;
@@ -164,19 +119,16 @@
   }
 }
 .social-icons {
-  /* position: absolute; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 4px;
-  /* bottom: 32px; */
 }
 
 @media screen and (min-width: 768px) {
   .social-icons {
     gap: 8px;
     justify-content: flex-end;
-    /* right: 32px; */
   }
 }
 
