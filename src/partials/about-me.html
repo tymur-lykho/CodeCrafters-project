@@ -23,20 +23,18 @@
     </div>
 
     <!-- Accordion секції -->
-    <ul class="accordion">
-      <li class="accordion-item active">
-        <div class="accordion-line">
+    <ul class="accordion" id="about-me-accordion">
+      <li class="accordion-item active ac">
+        <div class="accordion-line ac-header ac-trigger">
           <h3 class="accordion-title">About Me</h3>
-          <button class="accordion-header">
-            <img
-              src="../img/about-me/arrow-up.svg"
-              alt="arrow icon"
-              class="accordion-icon"
-            />
+          <button class="accordion-header ac-trigger ac-btn">
+            <svg class="ac-btn-icon" width="20" height="20">
+              <use href="./img/sprite.svg#simple-arrow"></use>
+            </svg>
           </button>
         </div>
-        <div class="accordion-body">
-          <p class="accordion-text">
+        <div class="accordion-body ac-panel">
+          <p class="accordion-text ac-text">
             I am Lloyd Jefferson, a talented programmer with extensive expertise
             in software development. I have an understanding of different
             programming languages and technologies, always ready to improve my
@@ -45,7 +43,7 @@
             of analytical skills and am able to effectively solve even the most
             difficult tasks encountered on the way.
           </p>
-          <p class="ccordion-text">
+          <p class="accordion-text ac-text">
             Able to work both independently and in a team. I can effectively
             cooperate with colleagues, exchanging ideas and finding optimal
             solutions. Professional maturity allows you to calmly cope with
@@ -59,38 +57,34 @@
           </p>
         </div>
       </li>
-      <li class="accordion-item active">
-        <div class="accordion-line">
+      <li class="accordion-item active ac">
+        <div class="accordion-line ac-header ac-trigger">
           <h3 class="accordion-title">Role</h3>
-          <button class="accordion-header">
-            <img
-              src="../img/about-me/arrow-up.svg"
-              alt="arrow icon"
-              class="accordion-icon"
-            />
+          <button class="accordion-header ac-trigger ac-btn">
+            <svg class="ac-btn-icon" width="20" height="20">
+              <use href="./img/sprite.svg#simple-arrow"></use>
+            </svg>
           </button>
         </div>
-        <div class="accordion-body">
-          <ul>
+        <div class="accordion-body ac-panel">
+          <ul class="ac-text">
             <li class="accordion-list">Frontend development</li>
             <li class="accordion-list">HeadlessCMS, Wordpress</li>
             <li class="accordion-list">Blender (enjoy)</li>
           </ul>
         </div>
       </li>
-      <li class="accordion-item active">
-        <div class="accordion-line">
+      <li class="accordion-item active ac">
+        <div class="accordion-line ac-header ac-trigger">
           <h3 class="accordion-title">Education</h3>
-          <button class="accordion-header">
-            <img
-              src="../img/about-me/arrow-up.svg"
-              alt="arrow icon"
-              class="accordion-icon"
-            />
+          <button class="accordion-header ac-trigger ac-btn">
+            <svg class="ac-btn-icon" width="20" height="20">
+              <use href="./img/sprite.svg#simple-arrow"></use>
+            </svg>
           </button>
         </div>
-        <div class="accordion-body">
-          <ul>
+        <div class="ac-panel">
+          <ul class="ac-text">
             <li class="accordion-list">
               2018 - 2019 / Frontend Development Diploma, GoIT
             </li>
@@ -105,90 +99,29 @@
       </li>
     </ul>
 
-    
-    <div class="swiper skils" role="region" aria-label="Слайдер навичок">
-      <div class="swiper-wrapper skils-wrapper">
-        <ul class="skills-list">
-          <li class="swiper-item skils-item active ">HTML/CSS</li>
-          <li class="swiper-item skils-item  ">JavaScript</li>
-          <li class="swiper-item skils-item  ">React</li>
-          <li class="swiper-item skils-item  ">Node.js</li>
-          <li class="swiper-item skils-item  ">React Native</li>
-          <li class="swiper-item skils-item ">Soft skills</li>
-          </ul>
+    <div class="skills" role="region" aria-label="Slider of skills">
+      <div class="swiper" id="skills-swiper">
+        <ul class="swiper-wrapper skills-list">
+          <li class="swiper-slide skills-item"><p>HTML/CSS</p></li>
+          <li class="swiper-slide skills-item"><p>JavaScript</p></li>
+          <li class="swiper-slide skills-item"><p>React</p></li>
+          <li class="swiper-slide skills-item"><p>Node.js</p></li>
+          <li class="swiper-slide skills-item"><p>React Native</p></li>
+          <li class="swiper-slide skills-item"><p>Soft skills</p></li>
+          <li class="swiper-slide skills-item"><p>HTML/CSS</p></li>
+          <li class="swiper-slide skills-item"><p>JavaScript</p></li>
+          <li class="swiper-slide skills-item"><p>React</p></li>
+          <li class="swiper-slide skills-item"><p>Node.js</p></li>
+          <li class="swiper-slide skills-item"><p>React Native</p></li>
+          <li class="swiper-slide skills-item"><p>Soft skills</p></li>
+        </ul>
       </div>
-      <button type="button" class="reviews-btn-next">
-        <svg class="icon-reviews-arrow" width="24" height="24">
-          <use href="../img/projects/symbol-defs.svg#icon-arrow-right2"></use>
+
+      <button type="button" class="skills-btn-next">
+        <svg class="skills-btn-icon" width="24" height="24">
+          <use href="./img/sprite.svg#arrow-narrow"></use>
         </svg>
       </button>
-    </div>  
+    </div>
   </div>
 </section>
-
-
-
-   <!-- Кожен <li> повинен бути окремим слайдом -->
-    <!-- <div class="swiper-slide">
-      <ul class="skill-list">
-        <li class="swiper-item active">HTML/CSS</li>
-      </ul>
-    </div>
-    <div class="swiper-slide">
-      <ul class="skill-list">
-        <li class="swiper-item">JavaScript</li>
-      </ul>
-    </div>
-    <div class="swiper-slide">
-      <ul class="skill-list">
-        <li class="swiper-item">React</li>
-      </ul>
-    </div>
-    <div class="swiper-slide">
-      <ul class="skill-list">
-        <li class="swiper-item">Node.js</li>
-      </ul>
-    </div>
-    <div class="swiper-slide">
-      <ul class="skill-list">
-        <li class="swiper-item">React Native</li>
-      </ul>
-    </div>
-    <div class="swiper-slide">
-      <ul class="skill-list">
-        <li class="swiper-item">Soft skills</li>
-      </ul>
-    </div>
-    <button type="button" class="reviews-btn-next">
-      <svg class="icon-reviews-arrow" width="24" height="24">
-        <use href="../img/projects/symbol-defs.svg#icon-arrow-right2"></use>
-      </svg>
-    </button> -->
-
-
-    <!-- <div class="swiper skills-swiper" role="region" aria-label="Слайдер навичок">
-      <div class="swiper-wrapper">
-        <ul class="swiper-slide skill-list">
-          <li class="skill-item">HTML/CSS</li>
-        </ul>
-        <ul class="swiper-slide skill-list">
-          <li class="skill-item">JavaScript</li>
-        </ul>
-        <ul class="swiper-slide skill-list">
-          <li class="skill-item">React</li>
-        </ul>
-        <ul class="swiper-slide skill-list">
-          <li class="skill-item">Node.js</li>
-        </ul>
-        <ul class="swiper-slide skill-list">
-          <li class="skill-item">React Native</li>
-        </ul>
-        <ul class="swiper-slide skill-list">
-          <li class="skill-item">Soft skills</li>
-        </ul>
-      </div>
-      <button type="button" class="wiper-button-next">
-        <svg class="icon-reviews-arrow" width="24" height="24">
-          <use href="../img/projects/symbol-defs.svg#icon-arrow-right2"></use>
-        </svg>
-      </button> -->
