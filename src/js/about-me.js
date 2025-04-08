@@ -1,6 +1,11 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
+import Swiper from 'swiper';
+import { Mousewheel, Keyboard } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/mousewheel';
+
 const container = document.querySelector('#about-me-accordion');
 
 const accordion = new Accordion(container, {
@@ -13,10 +18,6 @@ const accordion = new Accordion(container, {
   },
 });
 
-import Swiper from 'swiper';
-import { Mousewheel, Keyboard } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/mousewheel';
 
 const swWrap = document.querySelector('#skills-swiper');
 
