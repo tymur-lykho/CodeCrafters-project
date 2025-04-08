@@ -30,3 +30,16 @@ document.querySelectorAll('.accordion-item-faq').forEach(item => {
 //   showMultiple: true, // тепер можна відкривати всі одночасно
 //   duration: 300,
 // });
+// import Accordion from 'accordion-js';
+// import 'accordion-js/dist/accordion.min.css';
+
+// new Accordion('.js-accordion', {
+//   elementClass: 'accordion-item-faq',
+//   triggerClass: 'acc-btn',
+//   panelClass: 'faq-content',
+//   duration: 400,
+//   showMultiple: true,
+//   onOpen: function (currentElement) {
+//     console.log(currentElement);
+//   },
+// });

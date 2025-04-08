@@ -18,7 +18,7 @@
   border-top: 1px solid rgba(250, 250, 250, 0.2);
 }
 .accordion-item-faq {
-  max-width: 343px;
+  width: 100%;
   padding: 20px 0;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
   transition: all 0.3s ease-in-out;
@@ -26,25 +26,22 @@
 .accordion-item-faq:first-child {
   border-top: none;
 }
-
 .acc-header-wrapper {
   display: flex;
+  gap: 20px;
   justify-content: space-between;
   align-items: center;
 }
 .acc-header {
-  font-family: 'Inter Tight', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: #fafafa;
-  width: 289px;
 }
 .acc-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-shrink: 0;
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
   padding: 7px;
@@ -54,18 +51,21 @@
   background-color: #1c1d20;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+.acc-icon {
+  stroke: #fafafa;
+}
+
 .accordion-content {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: rgba(250, 250, 250, 0.6);
   margin-top: 16px;
+  display: none;
 }
-.accordion-item-faq.active .accordion-content {
+.accordion-item-faq.open .accordion-content {
   display: block;
 }
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .faq-section {
@@ -74,7 +74,6 @@
   .accordion-item-faq {
     padding-top: 32px;
     padding-bottom: 24px;
-    max-width: 704px;
   }
 
   .acc-header {
@@ -126,5 +125,8 @@
   .accordion-item-faq:nth-child(4),
   .accordion-item-faq:nth-child(6) {
     padding-right: 0;
+  }
+  ul.accordion-list:not(:first-child) {
+    padding-top: 0 !important;
   }
 }
