@@ -1,84 +1,142 @@
 <header class="header">
-  <div class="container header-container">
-    <a href="./index.html" class="header-img-box">
+
+<div class="container header-container">
+  
+    <div class="logo-wrapper"> 
+
+     <a href="./index.html" class="header-img-box">
+      
       <img
-        class="header-image"
-        srcset="./img/avatar@1x.webp 1x ../img/avatar@1x.webp 2x"
-        src="./img/avatar@1x.webp"
-        alt="logo"
-        width="80"
-        height="80"
-        loading="lazy"
-        title="logo"
-      />
+      class="header-image"
+      srcset="
+        src/img/header/image.webp 1x,
+        src/img/header/image2x.webp 2x      "
+      src="src/img/header/image.webp"
+      alt="logo"
+      width="80"
+      height="80"
+      loading="lazy"
+      title="logo"           >
 
-      <p>jefferson*</p>
-    </a>
+      <p class="logo-text">jefferson*</p>
 
+     </a>
+    </div>
+   
     <nav class="menu-box">
-      <button class="menu-link" type="button" aria-label="Menu button">
-        Menu
-      </button>
 
-      <div class="drop-down">
-        <ul class="menu-list visually-hidden">
-          <li class="menu-list-item">
-            <a href="#about-me" class="list-item-link">About me</a>
-          </li>
-          <li class="menu-list-item">
-            <a href="#benefits" class="list-item-link">Benefits</a>
-          </li>
-          <li class="menu-list-item">
-            <a href="#projects" class="list-item-link">Projects</a>
-          </li>
-          <li class="menu-list-item">
-            <a href="#faq" class="list-item-link">FAQ</a>
-          </li>
-        </ul>
-      </div>
+        <button class="menu-link" 
+        type="button" aria-label="Menu button">Menu
+        </button>
+  
+        <div class="drop-down">
+
+          <ul class="menu-list visually-hidden">
+
+            <li class="menu-list-item">
+
+              <a href="#about-me" class="list-item-link"
+              >About me</a>
+
+            </li>
+
+            <li class="menu-list-item">
+
+              <a href="#benefits" class="list-item-link"
+                >Benefits</a>
+
+            </li>
+
+            <li class="menu-list-item">
+
+              <a href="#projects" class="list-item-link"
+            >Projects</a>
+
+            </li>
+
+            <li class="menu-list-item">
+
+              <a href="#faq-section" class="list-item-link"
+               >FAQ</a>
+            </li>
+          </ul>
+
+        </div>
+
+        
+
     </nav>
+  
+    
+    <a class="order-btn" href="#work-together">Order the project</a>
+    
+  
+    <div class="burger-btn-box">
 
-    <div class="order-btn-box">
-      <a class="order-btn" href="#work-together">Order the project</a>
+        <button class="burger-btn"
+         type="button" aria-label="Mobile menu button">
+
+         <svg class="icon icon-menu-05 burger-icon">
+            <use xlink:href="#icon-menu-05"></use></svg>
+
+        </button>
     </div>
 
-    <button class="burger-button" type="button" aria-label="Mobile menu button">
-      <svg class="burger-icon" width="28" height="28">
-        <use href="./img/sprite.svg#menu"></use>
-      </svg>
-    </button>
-  </div>
+</div>
+ 
 
-  <!-- Mobail-menu  -->
-  <div class="mobail-backdrop">
+
+
+
+
+
+<!-- Mobail-menu  --> 
+  
+  <div class="mobail-backdrop  modal">
+
     <div class="mobile-menu">
-      <button class="close-button" type="button" aria-label="Close button">
-        <svg class="close-icon" width="28" height="28">
-          <use href=" # "></use>
-        </svg>
-      </button>
 
-      <ul class="mobail-menu-list">
-        <li class="mobail-menu-list-item">
-          <a href="#about-me" class="mobail-list-item-link">About me</a>
-        </li>
-        <li class="menu-list-item">
-          <a href="#benefits" class="mobail-list-item-link">Benefits</a>
-        </li>
-        <li class="menu-list-item">
-          <a href="#projects" class="mobail-list-item-link">Projects</a>
-        </li>
-        <li class="menu-list-item">
-          <a href="#faq-section" class="mobail-list-item-link">FAQ</a>
-        </li>
-      </ul>
+          <button class="close-btn" type="button" aria-label="Close button">
 
+            <svg class="icon icon-x close-icon"><use xlink:href="#icon-x"></use></svg>
 
-        <a class="burger-order-btn mobail-order-btn" href="#work-together"
-          >Order the project</a
-        >
+          </button>
 
-      </div>
+          <ul class="mobail-menu-list">
+
+            <li class="mobail-menu-list-item">
+
+              <a href="#about-me" class="mobail-list-item-link"
+              >About me</a>            
+            </li>
+
+            <li class="menu-list-item">
+
+              <a href="#benefits"
+              class="mobail-list-item-link">Benefits</a>  
+
+            </li>
+
+            <li class="menu-list-item">
+
+              <a href="#projects" 
+             class="mobail-list-item-link"
+              >Projects</a>            </li>
+
+            <li class="menu-list-item">
+
+              <a href="#faq-section" 
+             class="mobail-list-item-link   "
+              >FAQ</a>            </li>
+
+          </ul>
+
+          <a class="mobail-order-btn" href="#work-together">Order the project</a>
+
     </div>
+
   </div>
+
 </header>
+
+

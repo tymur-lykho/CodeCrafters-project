@@ -1,8 +1,11 @@
+
+
+
 const menuBtn = document.querySelector('.menu-link');
 const menuList = document.querySelector('.menu-list')
-const burgerBtn = document.querySelector('.burger-button');
+const burgerBtn = document.querySelector('.burger-btn');
 const burgerMenu = document.querySelector('.mobile-menu');
-const closeBtn = document.querySelector('.close-button');
+const closeBtn = document.querySelector('.close-btn');
 const orderBtn = document.querySelector('.mobail-order-btn');
 const burgerMenuList = document.querySelector('.mobail-menu-list');
 
@@ -108,4 +111,3 @@ function handleCloseClick() {
     }, 500);
     document.body.style.overflow = '';
 }
-
