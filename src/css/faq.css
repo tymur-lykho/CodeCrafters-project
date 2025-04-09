@@ -1,10 +1,6 @@
 /* Styles for Mobile devices */
-/* .faq-section {
-  padding: 64px 0;
-} */
+
 .title-faq {
-  /* font-family: 'Inter Tight', sans-serif;
-  font-weight: 600; */
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
@@ -40,7 +36,7 @@
 #faq-accordion .ac .ac-trigger::after {
   display: none;
 }
-#faq-accordion .ac .ac-panel .accordion-content-faq {
+#faq-accordion .accordion-content-faq {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -63,7 +59,7 @@
   width: 100%;
 }
 
-#faq-accordion .ac .ac-trigger .ac-btn-faq .ac-icon {
+#faq-accordion .ac-btn-faq .ac-icon {
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -88,18 +84,19 @@
     padding: 96px 0;
   }
   #faq-accordion .ac {
-    padding: 32px 0 32px;
+    padding: 32px 0 42px;
   }
-
+  #faq-accordion .ac:last-child {
+    padding-bottom: 32px;
+  }
   #faq-accordion .ac.is-active {
     padding-bottom: 24px;
   }
 
-  #faq-accordion .ac-panel .accordion-content-faq {
+  #faq-accordion .accordion-content-faq {
     margin-top: 26px;
   }
-  #faq-accordion .ac .ac-trigger .ac-btn-faq .ac-icon {
-    /* padding: 10px; */
+  #faq-accordion .ac-btn-faq .ac-icon {
     width: 40px;
     height: 40px;
   }
@@ -107,39 +104,40 @@
 
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
-  /* .faq-section {
-    padding: 164px 0;
-  } */
   .faq {
     display: flex;
     flex-wrap: wrap;
   }
-  /* #faq-accordion .ac {
-    padding: 32px 0 42px;
-  } */
-  #faq-accordion .ac.is-active {
-    padding-bottom: 26px;
-  }
+
   #faq-accordion .ac {
     padding-left: 32px;
     padding-right: 32px;
-    /* padding-bottom: 42px; */
     width: 50%;
-    /* overflow: hidden; */
     border-right: 1px solid rgba(250, 250, 250, 0.2);
   }
+
+  #faq-accordion .ac:nth-child(5) {
+    padding-bottom: 62px;
+  }
+  #faq-accordion .ac.is-active {
+    padding-bottom: 26px;
+  }
+
+  #faq-accordion .ac.is-active:nth-child(5) {
+    padding-bottom: 54px;
+  }
+
   #faq-accordion .ac:nth-child(2n) {
     border-right: none;
   }
-  #faq-accordion .ac:nth-child(1),
-  #faq-accordion .ac:nth-child(3),
-  #faq-accordion .ac:nth-child(5) {
+  #faq-accordion .ac:nth-child(odd) {
     padding-left: 0;
   }
 
-  #faq-accordion .ac:nth-child(2),
-  #faq-accordion .ac:nth-child(4),
-  #faq-accordion .ac:nth-child(6) {
+  #faq-accordion .ac:nth-child(even) {
     padding-right: 0;
+  }
+  #faq-accordion .ac:nth-child(2) .accordion-content-faq {
+    margin-top: 21px;
   }
 }
