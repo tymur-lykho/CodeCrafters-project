@@ -12,13 +12,51 @@
         <span class="accent-word-grey">websites</span> that reflect each
         client's unique personality.
       </p>
-
-      <!-- Контентне зображення -->
-      <img
-        src="./img/about-me/image.png"
-        alt="Lloyd Jefferson working on laptop"
-        class="about-me-img"
-      />
+      <picture>
+      
+        <source 
+          srcset="./img/about-me/image-desktop@2x.jpg" 
+          media="(min-width: 1440px)" 
+          type="image/jpeg" 
+        />
+     
+        <source 
+          srcset="./img/about-me/image-desktop@1x.jpg" 
+          media="(min-width: 1440px)" 
+          type="image/jpeg" 
+        />
+      
+        <source 
+          srcset="./img/about-me/image-tablet@2x.jpg" 
+          media="(min-width: 768px)" 
+          type="image/jpeg" 
+        />
+   
+        <source 
+          srcset="./img/about-me/image-tablet@1x.png" 
+          media="(min-width: 768px)" 
+          type="image/png" 
+        />
+      
+        <source 
+          srcset="./img/about-me/image-mobile@2x.jpg" 
+          media="(max-width: 767px)" 
+          type="image/jpeg" 
+        />
+    
+        <source 
+          srcset="./img/about-me/image-mobile@1x.jpg" 
+          media="(max-width: 767px)" 
+          type="image/jpeg" 
+        />
+      
+        <img 
+          src="./img/about-me/image-mobile@1x.jpg" 
+          alt="Lloyd Jefferson working on laptop"
+          class="about-me-img"
+        />
+      </picture>
+      
     </div>
 
     <!-- Accordion секції -->
