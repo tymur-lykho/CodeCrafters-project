@@ -35,3 +35,20 @@ async function sendMail(email, comment) {
     throw new Error(error);
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const target = document.querySelector('.work-together');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        target.classList.add('visible');
+      } else {
+        target.classList.remove('visible');
+      }
+    },
+    { threshold: 0 }
+  );
+
+  observer.observe(target);
+});
