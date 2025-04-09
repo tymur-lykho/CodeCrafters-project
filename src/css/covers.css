@@ -94,6 +94,12 @@
     transform: translateX(0%);
   }
 }
+.covers-list:nth-child(odd) .covers-item {
+  animation: marqueeLeft 5s linear infinite alternate;
+}
+.covers-list:nth-child(even) .covers-item {
+  animation: marqueeRight 5s linear infinite alternate;
+}
 
 .covers-img {
   object-fit: cover;
