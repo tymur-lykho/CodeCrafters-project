@@ -1,71 +1,87 @@
 .hero {
-  position: relative;
-  background: linear-gradient(
-    270deg,
-    rgba(28, 29, 32, 1) 50%,
-    rgba(105, 41, 45, 1) 68%,
-    rgba(237, 59, 68, 1) 100%
-  );
+  background: url('/img/hero/glass-hero@1x.webp'),
+    linear-gradient(
+      270deg,
+      rgba(28, 29, 32, 1) 50%,
+      rgba(105, 41, 45, 1) 68%,
+      rgba(237, 59, 68, 1) 100%
+    );
+
+  background-repeat: repeat-y, no-repeat;
+  background-position-x: -140vw, left;
+  background-size: cover, cover;
+  background-blend-mode: overlay;
+  backdrop-filter: blur(4px);
+  transition: background-position-x 2s ease-in-out;
 
   padding-top: 281px;
   padding-bottom: 32px;
 }
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background: url('/img/hero/glass-hero@2x.webp'),
+      linear-gradient(
+        270deg,
+        rgba(28, 29, 32, 1) 50%,
+        rgba(105, 41, 45, 1) 68%,
+        rgba(237, 59, 68, 1) 100%
+      );
 
-.overlay-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 90%;
-  background: url('/img/hero/glass-hero.webp') no-repeat left / cover;
-  z-index: 1;
-  transform: translateX(-100%);
-  transition: transform 1.2s ease-in-out;
-}
-.overlay-image.visible {
-  transform: translateX(0);
-}
-@media (min-resolution: 2dppx) {
-  .overlay-image {
-    background-image: url('/img/hero/glass-hero.webp');
-  }
-}
-@media (min-width: 768px) {
-  .overlay-image {
-    width: 70%;
-    background-image: url('/img/hero/glass-hero.webp');
-  }
-  @media (min-resolution: 2dppx) {
-    .overlay-image {
-      background-image: url('/img/hero/glass-hero.webp');
-    }
-  }
-}
-@media (min-width: 1440px) {
-  .overlay-image {
-    width: 50%;
-    background-image: url('/img/hero/glass-hero.webp');
-  }
-  @media (min-resolution: 2dppx) {
-    .overlay-image {
-      background-image: url('/img/hero/glass-hero.webp');
-    }
+    background-repeat: repeat-y, no-repeat;
+    background-position-x: -140vw, left;
+    background-size: cover, cover;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(4px);
   }
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+@media only screen and (min-width: 768px) {
+  .hero {
+    background-position-x: -90vw, left;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .hero {
+    background-size: auto, cover;
+    background-position-x: -40vw, left;
+  }
+}
+.hero.visible {
+  background-position-x: -70vw, left;
+}
+@media only screen and (max-width: 373px) {
+  .hero.visible {
+    background-size: auto, cover;
+    background-position-x: -140vw, left;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .hero.visible {
+    background-position-x: -22vw, left;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .hero.visible {
+    background-position-x: 0vw, left;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (max-width: 1440px) and (min-resolution: 192dpi),
+  only screen and (max-width: 1440px) and (min-resolution: 2dppx) {
+  .hero.visible {
+    background-size: 728px 900px, cover;
+  }
 }
 
 .hero-title {
-  color: #fafafa;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 50px;
   letter-spacing: -0.03em;
   line-height: 1;
-  white-space: pre-line;
 
   margin-bottom: 212px;
 }
@@ -83,6 +99,7 @@
 
 .fade-line {
   display: block;
+  width: 101%;
   white-space: normal;
 }
 .fade-word {
@@ -144,8 +161,6 @@
   font-size: 14px;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #fafafa;
-  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -168,13 +183,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .social-icons > li {
-    width: 55px;
-    height: 55px;
-    font-size: 16px;
-    padding: 18px 0;
-  }
-
   .social-icons li:last-child {
     padding: 18px 24px;
     width: auto;
