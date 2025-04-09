@@ -6,9 +6,4 @@ const container = document.querySelector('#faq-accordion');
 const accordion = new Accordion(container, {
   duration: 400,
   showMultiple: true,
-  openOnInit: [0],
-
-  onOpen: function (currentElement) {
-    console.log(currentElement);
-  },
 });
