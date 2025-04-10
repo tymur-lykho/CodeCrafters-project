@@ -14,7 +14,7 @@
     <script type="module" crossorigin src="/CodeCrafters-project/index.js"></script>
     <link rel="modulepreload" crossorigin href="/CodeCrafters-project/assets/vendor-wCG0WGog.js">
     <link rel="stylesheet" crossorigin href="/CodeCrafters-project/assets/vendor-D2Xkpl5Y.css">
-    <link rel="stylesheet" crossorigin href="/CodeCrafters-project/assets/index-CGohYzIE.css">
+    <link rel="stylesheet" crossorigin href="/CodeCrafters-project/assets/index-BPvXOte7.css">
   </head>
   <body>
     <header class="header">
@@ -143,23 +143,38 @@
     </h2>
 
     <div class="about-me-section">
-      <div class="about-me-introduction">
-        <p class="about-me-content">
-          I work with people all over the world to create impressive and
-          <span class="accent-word-red">functional</span>
-          <span class="accent-word-grey">websites</span> that reflect each
-          client's unique personality.
-        </p>
-      </div>
-      <!-- Контентне зображення -->
-      <img
-        src="../img/about-me/image.png"
-        alt="Lloyd Jefferson working on laptop"
-        class="about-me-img"
-      />
+      <p class="about-me-content about-me-introduction">
+        I work with people all over the world to create impressive and
+        <span class="accent-word-red">functional</span>
+        <span class="accent-word-grey">websites</span> that reflect each
+        client's unique personality.
+      </p>
+      <picture>
+        <source
+          srcset="/CodeCrafters-project/assets/image-desktop@1x-Ch6b0fAl.webp 1x, /CodeCrafters-project/assets/image-desktop@2x-Dd9ZvAk6.webp 2x"
+          media="(min-width: 1440px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="/CodeCrafters-project/assets/image-tablet@1x-BQNqYZ4A.webp 1x, /CodeCrafters-project/assets/image-tablet@2x-DzCx_P1-.webp 2x"
+          media="(min-width: 768px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="/CodeCrafters-project/assets/image-mobile@1x-Cju8Pzrv.webp 1x, /CodeCrafters-project/assets/image-mobile@1x-Cju8Pzrv.webp 2x"
+          media="(max-width: 767px)"
+          type="image/jpeg"
+        />
+        <img
+          src="/CodeCrafters-project/assets/image-mobile@1x-Cju8Pzrv.webp"
+          alt="Lloyd Jefferson working on laptop"
+          class="about-me-img"
+          width="704"
+          height="700"
+        />
+      </picture>
     </div>
 
-    <!-- Accordion секції -->
     <ul class="accordion" id="about-me-accordion">
       <li class="accordion-item active ac">
         <div class="accordion-line ac-header ac-trigger">
@@ -469,118 +484,6 @@
   </div>
 </section>
 
-      <section>
-  <div class="container faq-section">
-    <h2 class="title-faq">FAQ</h2>
-    <ul class="accordion-list js-accordion">
-      <li class="accordion-item">
-        <div class="acc-header-wrapper">
-          <h3 class="acc-header">
-            What programming languages ​​are most often used in your project?
-          </h3>
-          <button class="acc-btn" type="button">
-            <svg class="acc-icon" width="12" height="8">
-              <use href="#icon"></use>
-            </svg>
-          </button>
-        </div>
-
-        <p class="accordion-content">
-          In the field of web development, there are various technologies and
-          programming languages. Typically, this includes a combination of
-          frontend (client side) and backend (server side) languages.
-        </p>
-      </li>
-      <li class="accordion-item">
-        <div class="acc-header-wrapper">
-          <h3 class="acc-header">What are the deadlines for the project?</h3>
-          <button class="acc-btn" type="button">
-            <svg class="acc-icon" width="12" height="8">
-              <use href="#icon"></use>
-            </svg>
-          </button>
-        </div>
-
-        <p class="accordion-content">
-          The terms of project implementation depend to a large extent on a
-          number of factors, such as the scope of the project, its complexity,
-          and the availability of resources. Determining exact deadlines is a
-          difficult task, and it usually occurs during the planning phase of the
-          project.
-        </p>
-      </li>
-      <li class="accordion-item">
-        <div class="acc-header-wrapper">
-          <h3 class="acc-header">What payment methods do you accept?</h3>
-          <button class="acc-btn" type="button">
-            <svg class="acc-icon" width="12" height="8">
-              <use href="#icon"></use>
-            </svg>
-          </button>
-        </div>
-
-        <p class="accordion-content">
-          Payment through credit and debit cards such as Visa, MasterCard,
-          specialized electronic payment systems such as PayPal, as well as
-          payments in cryptocurrencies such as Bitcoin, Ethereum and others.
-        </p>
-      </li>
-      <li class="accordion-item">
-        <div class="acc-header-wrapper">
-          <h3 class="acc-header">How can I contact you?</h3>
-          <button class="acc-btn" type="button">
-            <svg class="acc-icon" width="12" height="8">
-              <use href="#icon"></use>
-            </svg>
-          </button>
-        </div>
-
-        <p class="accordion-content">
-          In the field of web development, there are various technologies and
-          programming languages. Typically, this includes a combination of
-          frontend (client side) and backend (server side) languages.
-        </p>
-      </li>
-      <li class="accordion-item">
-        <div class="acc-header-wrapper">
-          <h3 class="acc-header">Do you provide advice or support?</h3>
-          <button class="acc-btn" type="button">
-            <svg class="acc-icon" width="12" height="8">
-              <use href="#icon"></use>
-            </svg>
-          </button>
-        </div>
-
-        <p class="accordion-content">
-          The terms of project implementation depend to a large extent on a
-          number of factors, such as the scope of the project, its complexity,
-          and the availability of resources. Determining exact deadlines is a
-          difficult task, and it usually occurs during the planning phase of the
-          project.
-        </p>
-      </li>
-      <li class="accordion-item">
-        <div class="acc-header-wrapper">
-          <h3 class="acc-header">
-            What does the process of developing a software product look like
-            from idea to implementation?
-          </h3>
-          <button class="acc-btn" type="button">
-            <svg class="acc-icon" width="12" height="8">
-              <use href="#icon-acc"></use>
-            </svg>
-          </button>
-        </div>
-
-        <p class="accordion-content">
-          Payment through credit and debit cards such as Visa, MasterCard,
-          specialized electronic payment systems such as PayPal, as well as
-          payments in cryptocurrencies such as Bitcoin, Ethereum and others.
-        </p>
-      </li>
-    </ul>
-  </div>
-</section>
 
       <section class="covers">
   <div class="container covers-container">
