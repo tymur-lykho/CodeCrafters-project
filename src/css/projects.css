@@ -156,7 +156,6 @@
 @media only screen and (min-width: 768px) {
   .arrow-btn-wrapper {
     gap: 20px;
-    margin-bottom: 96px;
   }
 }
 .arrow-btn {
@@ -174,7 +173,7 @@
 }
 .arrow-btn:hover,
 .arrow-btn:focus {
-  background: #e0373f;
+  background-color: #e0373f;
 }
 
 @media only screen and (min-width: 768px) {
@@ -197,8 +196,12 @@
 }
 .disabled {
   border: 1px solid rgba(250, 250, 250, 0.2);
-  cursor: not-allowed;
 }
+
 .disabled .projects-icon {
   stroke: #3b3b3b;
+  cursor: not-allowed;
+}
+.arrow-btn.disabled {
+  background-color: transparent;
 }

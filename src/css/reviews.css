@@ -1,25 +1,10 @@
-.reviews-container {
-    margin: 64px auto;
-}
-@media only screen and (min-width: 768px) {
-.reviews-container {
-        margin: 96px auto;
-    }
-}
-@media only screen and (min-width: 768px) {
-    .reviews-container {
-        margin: 164px auto;
-    }
-}
 .title {
     font-size: 16px;
     font-weight: 600;       
     letter-spacing: -0.02em;
     text-transform: uppercase;
-    color: rgba(250, 250, 250, 0.4);
-    
+    color: rgba(250, 250, 250, 0.4);    
 }
-
 .reviews-list {    
     display: flex;
     list-style-type: none;
@@ -35,8 +20,6 @@
     width: 332px;
     height: auto !important;        
 }
-
-
 .review-img {
     border-radius: 10px;
     margin-bottom: 32px;
@@ -48,6 +31,7 @@
     margin-bottom: 8px;    
 }
 .review-text {    
+    line-height: 1.5;
     letter-spacing: -0.02em;
     color: rgba(250, 250, 250, 0.6);    
 }
@@ -63,47 +47,55 @@
 }
 
 /*Контейнер для стрілок*/
-.arrows-container {
+
+.reviews-btn-container {
     display: flex;
-    gap: 12px;
+    align-items: center;
     justify-content: center;
-    align-items: center;   
+    gap: 12px;
 }
+
 @media only screen and (min-width: 768px) {
-    .arrows-container {
+    .reviews-btn-container {
         gap: 20px;
-    }
+        }
 }
-.reviews-btn-prev, 
-.reviews-btn-next {  
-        
-    background-color: transparent;   
-    width: 52px;
-    height: 52px;
+
+/*початок однакових класів*/
+.arrow-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     border: 1px solid rgba(250, 250, 250, 0.5);
     border-radius: 60px;
-    padding: 14px;
+    width: 52px;
+    height: 52px;
+
+    background-color: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow-btn:not(.disabled):hover,
+.arrow-btn:not(.disabled):focus {
+    background: #e0373f;
+    border: none;
 }
 
 @media only screen and (min-width: 768px) {
-    .reviews-btn-prev,
-    .reviews-btn-next {
+    .arrow-btn {
         width: 68px;
         height: 68px;
-        padding: 18px;
     }
 }
+/*кінець однакових класів*/
 
-.reviews-btn-prev {
-transform: rotate(-180deg);
+.icon-arrow-right {
+    stroke: #fafafa;
 }
 
-.icon-reviews-arrow {
-    fill: #fafafa;
-    stroke: none !important;
-}
 @media only screen and (min-width: 768px) {
-    .icon-reviews-arrow {
+    .icon-arrow-right {
         width: 32px;
         height: 32px;
     }
@@ -112,8 +104,16 @@ transform: rotate(-180deg);
 .disabled {
     border: 1px solid rgba(250, 250, 250, 0.2);
     cursor: default;
+}
+.disabled .icon-arrow-right {
+    stroke: #3b3b3b;
+}
 
-    .icon-reviews-arrow {
-        fill: #3b3b3b;
-    }
+
+
+.reviews-btn-prev {
+    transform: rotate(-180deg);
+}
+.reviews-btn-container.hide {
+    display: none;
 }

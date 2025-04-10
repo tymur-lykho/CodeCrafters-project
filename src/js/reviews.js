@@ -4,7 +4,7 @@ import "izitoast/dist/css/iziToast.min.css";
 import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/mousewheel'; 
-import {Keyboard } from "swiper/modules";
+import { Keyboard, Mousewheel } from "swiper/modules";
 
 
 const reviewsList = document.querySelector(".reviews-list");
@@ -27,6 +27,7 @@ function loadReviews() {
       });
         console.error('Помилка при отриманні відгуків:', error);
         reviewsList.insertAdjacentHTML("beforeend", `<li class="review-item error">Not found</li>`);
+        hideButtons();
     });
 }
 
@@ -64,8 +65,8 @@ function createReviews(reviews) {
 }
 
 function initSwiper() {
-  swiper = new Swiper('.swiper', {
-    modules: [Keyboard],
+  swiper = new Swiper('.swiper-reviews', {
+    modules: [Keyboard, Mousewheel],
     slidesPerView: 1, 
     spaceBetween: 16, 
     loop: false,
@@ -114,6 +115,12 @@ function updateButtonState() {
   nextButton.classList.toggle('disabled', swiper.isEnd); 
 }
 
+function hideButtons() {
+  const buttonsContainer = document.querySelector('.reviews-btn-container');
+  if (buttonsContainer) {
+    buttonsContainer.classList.add('hide');
+  }
+}
 
 
 
