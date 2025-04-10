@@ -8,28 +8,6 @@
   align-items: flex-start;
   justify-content: space-between;
 }
-.nav {
-  display: flex;
-  justify-content: space-between;
-}
-.nav-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
-}
-.nav-link {
-  position: relative;
-  display: block;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: 200ms ease-in;
-}
 
 .header-img-box {
   display: flex;
@@ -40,15 +18,10 @@
   animation-name: slidein;
 }
 
-.header-image {
-}
-
 .logo-text {
-  font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #fafafa;
 }
 
 .menu-box {
@@ -67,7 +40,6 @@
 .decoration {
   position: relative;
 }
-
 .decoration::after {
   content: '';
   position: relative;
@@ -103,36 +75,29 @@
 }
 
 .menu-list {
-  position: absolute;
-  z-index: 1;
   display: none;
-  opacity: 0;
+  position: absolute;
   top: 47px;
   left: 50%;
+  z-index: 1;
+
+  opacity: 0;
   transform: translateX(-50%);
 
-  visibility: hidden;
-  transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+  transition: opacity 300ms ease, transform 300ms ease;
 }
 .menu-list.is-open {
-  opacity: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+
+  opacity: 1;
   width: max-content;
 
   animation-duration: 4s;
   animation-name: fade-in;
-
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.visually-hidden {
-}
-
-.menu-list-item {
 }
 
 .list-item-link {
@@ -146,185 +111,47 @@
   color: rgb(237, 59, 68);
 }
 
-.order-btn-box {
-}
-
 .order-btn {
   display: none;
 }
-
 @media only screen and (min-width: 768px) {
   .order-btn {
     display: block;
-    padding: 18px 24px 18px 24px;
+    padding: 18px 24px;
     border-radius: 60px;
     background-color: rgb(237, 59, 68);
     letter-spacing: -0.02em;
+
     animation-duration: 1s;
     animation-name: slidein;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
       transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-
-  .order-btn:hover {
-    background-color: rgb(224, 55, 63);
-    transform: scale(1.05);
-  }
-
+  .order-btn:hover,
   .order-btn:focus {
     background-color: rgb(224, 55, 63);
-  }
-}
-
-.burger-btn-box {
-  margin-left: auto;
-}
-
-@media only screen and (min-width: 768px) {
-  .burger-btn-box {
-    display: none;
+    transform: scale(1.05);
   }
 }
 
 .burger-btn {
   display: flex;
-  background-color: transparent;
-  border: none;
-  padding: 0;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+
   animation-duration: 1s;
   animation-name: slidein;
+}
+@media only screen and (min-width: 768px) {
+  .burger-btn {
+    display: none;
+  }
 }
 
 .burger-icon {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 11.333h24M4 20.666h24' stroke='white' stroke-width='2.2857' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-/* <!-- Mobail-menu  -->  */
-
-.mobail-backdrop {
-  position: relative;
-  overflow: hidden;
-}
-
-.mobile-menu {
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transform: translateX(100%);
-  /* ! */
-  background: linear-gradient(
-    to right,
-    #ce3138 0%,
-    #9d2d31 25%,
-    #69292d 50%,
-    #2e2e31 75%,
-    #1c1d20 100%
-  );
-}
-/* ! */
-.mobile-menu::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.08) 0px,
-    rgba(0, 0, 0, 0.08) 2px,
-    transparent 20px,
-    transparent 30px
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-.mobile-menu.is-open {
-  transform: translateX(0);
-  opacity: 1;
-
-  padding: 120px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 32px;
-  right: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-}
-
-.close-icon {
-  width: 28px;
-  height: 28px;
-}
-
-.mobail-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.mobail-menu-list-item {
-}
-
-.mobail-list-item-link {
-  color: rgb(250, 250, 250);
-  font-family: 'Inter Tight';
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.19;
-  letter-spacing: -0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobail-list-item-link:hover,
-.mobail-list-item-link:focus,
-.mobail-list-item-link:active {
-  color: rgb(237, 59, 68);
-}
-
-.burger-order-btn-box {
-  margin-bottom: 64px;
-}
-
-.mobail-order-btn {
-  width: 174px;
-
-  padding: 18px 24px 18px 24px;
-  border-radius: 60px;
-  background: rgb(237, 59, 68);
-  font-size: 16px;
-  line-height: 1.19;
-  letter-spacing: -0.02em;
-  animation-duration: 1s;
-  animation-name: slidein;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
-}
-
-.mobail-order-btn:hover,
-.mobail-order-btn:focus,
-.mobail-order-btn:active {
-  background: rgb(224, 55, 63);
+  stroke: #fafafa;
 }
 
 @keyframes slidein {

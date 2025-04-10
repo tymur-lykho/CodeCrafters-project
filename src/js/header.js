@@ -1,107 +1,12 @@
-// const menuBtn = document.querySelector('.menu-link');
-// const menuList = document.querySelector('.menu-list');
-// const burgerBtn = document.querySelector('.burger-btn');
-// const burgerMenu = document.querySelector('.mobile-menu');
-// const closeBtn = document.querySelector('.close-btn');
-// const orderBtn = document.querySelector('.mobail-order-btn');
-// const burgerMenuList = document.querySelector('.mobail-menu-list');
-
-// menuBtn.addEventListener('click', handleMenuClick);
-// burgerBtn.addEventListener('click', handleBurgerClick);
-// closeBtn.addEventListener('click', handleCloseClick);
-// // menuList.addEventListener('click', handleMenuClick);
-// orderBtn.addEventListener('click', handleCloseClick);
-// burgerMenuList.addEventListener('click', handleCloseClick);
-
-// document.body.addEventListener('click', event => {
-//   if (
-//     !menuList.classList.contains('is-open') &&
-//     !event.target.classList.contains('menu-link')
-//   ) {
-//     handleMenuClick();
-//   }
-// });
-
-// document.addEventListener('keydown', event => {
-//   if (event.key === 'Escape' && !menuList.classList.contains('is-open')) {
-//     handleMenuClick();
-//   }
-// });
-
-// const dropDownKeyframes = new KeyframeEffect(
-//   menuList,
-//   [
-//     { opacity: '0', transform: 'translateY(-100%)' },
-//     { opacity: '1', transform: 'translateY(0)' },
-//   ],
-//   { duration: 500 }
-// );
-
-// const dropUpKeyframes = new KeyframeEffect(
-//   menuList,
-//   [
-//     { opacity: '1', transform: 'translateY(0)' },
-//     { opacity: '0', transform: 'translateY(-100%)' },
-//   ],
-//   { duration: 500 }
-// );
-
-// const dropDownAnimation = new Animation(dropDownKeyframes, document.timeline);
-
-// const dropUpAnimation = new Animation(dropUpKeyframes, document.timeline);
-
-// const openKeyframes = new KeyframeEffect(
-//   burgerMenu,
-//   [{ transform: 'translateX(100%)' }, { transform: 'translateX(0)' }],
-//   { duration: 500 }
-// );
-
-// const closeKeyframe = new KeyframeEffect(
-//   burgerMenu,
-//   [{ transform: 'translateX(0)' }, { transform: 'translateX(100%)' }],
-//   { duration: 500 }
-// );
-
-// const openBurgerAnimation = new Animation(openKeyframes, document.timeline);
-
-// const closeBurgerAnimation = new Animation(closeKeyframe, document.timeline);
-
-// function handleMenuClick() {
-//   if (menuList.classList.contains('is-open')) {
-//     // dropDownAnimation.play();
-//     menuList.classList.remove('is-open');
-//     return;
-//   }
-//   //   dropUpAnimation.play();
-//   setTimeout(() => {
-//     menuList.classList.add('is-open');
-//   }, 500);
-// }
-
-// function handleBurgerClick() {
-//   burgerMenu.classList.add('is-open');
-//   openBurgerAnimation.play();
-//   document.body.style.overflow = 'hidden';
-// }
-
-// function handleCloseClick() {
-//   closeBurgerAnimation.play();
-//   setTimeout(() => {
-//     burgerMenu.classList.remove('is-open');
-//   }, 500);
-//   document.body.style.overflow = '';
-// }
-
 const menuBtn = document.querySelector('.menu-link');
 const menuList = document.querySelector('.menu-list');
 
-menuBtn.addEventListener('click', () => {
-  menuList.classList.toggle('is-open');
-});
-
 const burgerBtn = document.querySelector('.burger-btn');
-const burgerMenu = document.querySelector('.mobile-menu');
-const closeBtn = document.querySelector('.close-btn');
+const burgerMenu = document.querySelector('.mobail-backdrop');
+const closeBtn = document.querySelector('.mobile-menu .close-btn');
+
+const mobileMenuLinks = document.querySelectorAll('.mobail-list-item-link');
+const mobileMenuOrderBtn = document.querySelector('.mobail-order-btn');
 
 const openKeyframes = new KeyframeEffect(
   burgerMenu,
@@ -118,21 +23,32 @@ const closeKeyframe = new KeyframeEffect(
 const openBurgerAnimation = new Animation(openKeyframes, document.timeline);
 const closeBurgerAnimation = new Animation(closeKeyframe, document.timeline);
 
-// Потім визначення обробників:
+burgerBtn.addEventListener('click', handleBurgerClick);
+
+menuBtn.addEventListener('click', () => {
+  menuList.classList.toggle('is-open');
+});
+
 function handleBurgerClick() {
   burgerMenu.classList.add('is-open');
+  document.body.classList.add('scroll-lock');
   openBurgerAnimation.play();
-  document.body.style.overflow = 'hidden';
+  closeBtn.addEventListener('click', handleCloseClick);
+  mobileMenuLinks.forEach(item =>
+    item.addEventListener('click', handleCloseClick)
+  );
+  mobileMenuOrderBtn.addEventListener('click', handleCloseClick);
 }
 
 function handleCloseClick() {
   closeBurgerAnimation.play();
   setTimeout(() => {
     burgerMenu.classList.remove('is-open');
+    document.body.classList.remove('scroll-lock');
+    closeBtn.removeEventListener('çlick', handleCloseClick);
+    mobileMenuLinks.forEach(item =>
+      item.removeEventListener('click', handleCloseClick)
+    );
+    mobileMenuOrderBtn.removeEventListener('click', handleCloseClick);
   }, 500);
-  document.body.style.overflow = '';
 }
-
-// І тільки після цього додаємо обробники подій:
-burgerBtn.addEventListener('click', handleBurgerClick);
-closeBtn.addEventListener('click', handleCloseClick);
