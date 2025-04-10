@@ -110,6 +110,14 @@
   top: 47px;
   left: 50%;
   transform: translateX(-50%);
+
+
+  visibility: hidden;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 300ms ease;
+
 }
 .menu-list.is-open {
   opacity: 1;
@@ -119,8 +127,12 @@
   align-items: center;
   width: max-content;
 
-  animation-duration: 1s;
-  animation-name: slide-down;
+  animation-duration: 4s;
+  animation-name: fade-in;
+
+  visibility: visible; 
+  pointer-events: auto;
+
 }
 
 .visually-hidden {
@@ -218,15 +230,35 @@
   width: 100%;
   height: 100dvh;
   transform: translateX(100%);
-  background-repeat: no-repeat;
 
-  background-color: rgba(0, 0, 0, 0.5);
-
-  @media (min-resolution: 2dppx) {
-    background-image: url('#');
-    background-size: cover;
-  }
+  background: linear-gradient(to right,
+  #ce3138 0%, 
+  #9d2d31 25%, 
+  #69292d 50%, 
+  #2e2e31 75%, 
+  #1c1d20 100%);
 }
+
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 2px,
+    transparent 20px,
+    transparent 30px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+
+
+
+
 .mobile-menu.is-open {
   transform: translateX(0);
   opacity: 1;
@@ -287,25 +319,19 @@
 
 .mobail-order-btn {
   width: 174px;
-  height: 56px;
+
   padding: 18px 24px 18px 24px;
   border-radius: 60px;
-  color: rgb(250, 250, 250);
   background: rgb(237, 59, 68);
-  font-family: 'Inter Tight';
   font-size: 16px;
-  font-weight: 500;
   line-height: 1.19;
   letter-spacing: -0.02em;
   animation-duration: 1s;
   animation-name: slidein;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  display: block;
-  text-decoration: none;
-  margin-top: auto;
   text-align: center;
-  border: none;
+ 
 }
 
 .mobail-order-btn:hover,
