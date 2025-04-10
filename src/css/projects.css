@@ -130,20 +130,17 @@
 
   background-color: #242527;
   padding: 100px 16px;
-  margin-bottom: 32px;
 }
 
 @media screen and (min-width: 768px) {
   .projects-items-picture {
     padding: 120px 45px;
-    margin-bottom: 64px;
   }
 }
 @media only screen and (min-width: 1140px) {
   .projects-items-picture {
     border-radius: 0 24px 24px 0;
     padding: 120px 37px;
-    margin-bottom: 0;
   }
 }
 

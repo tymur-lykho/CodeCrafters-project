@@ -21,18 +21,26 @@
 }
 .reviews-list {
   display: flex;
-  list-style-type: none;
   margin: 32px auto;
 }
 .review-item {
   display: flex;
   flex-direction: column;
-
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 20px;
   padding: 32px 24px;
-  width: 332px;
+  max-width: 100%;
   height: auto !important;
+}
+@media only screen and (min-width: 768px) {
+  .review-item {
+    max-width: 344px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .review-item {
+    max-width: 332px;
+  }
 }
 .review-img {
   border-radius: 10px;

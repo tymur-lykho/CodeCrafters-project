@@ -50,11 +50,11 @@
   }
 }
 .hero.visible {
-  background-position-x: -70vw, left;
+  background-position-x: -52vw, left;
 }
 @media only screen and (max-width: 373px) {
   .hero.visible {
-    background-size: auto, cover;
+    background-size: cover, cover;
     background-position-x: -140vw, left;
   }
 }
@@ -69,9 +69,9 @@
   }
 }
 
-@media only screen and (max-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (max-width: 1440px) and (min-resolution: 192dpi),
-  only screen and (max-width: 1440px) and (min-resolution: 2dppx) {
+@media only screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-width: 1440px) and (min-resolution: 192dpi),
+  only screen and (min-width: 1440px) and (min-resolution: 2dppx) {
   .hero.visible {
     background-size: 728px 900px, cover;
   }

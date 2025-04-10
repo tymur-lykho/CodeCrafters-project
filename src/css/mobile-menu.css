@@ -15,7 +15,7 @@
   background: url(../img/header/menu-glass@1x.webp),
     linear-gradient(-90deg, #1c1d20 50%, #69292d 68%, #ed3b44 100%);
   background-size: contain, cover;
-  background-repeat: repeat-y, no-repeat;
+  background-repeat: repeat, no-repeat;
   background-blend-mode: overlay;
   background-position: right, center;
 }

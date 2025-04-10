@@ -1,20 +1,20 @@
-import axios from "axios";
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+import axios from 'axios';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 import Swiper from 'swiper';
 import 'swiper/css';
-import 'swiper/css/mousewheel'; 
-import { Keyboard, Mousewheel } from "swiper/modules";
+import 'swiper/css/mousewheel';
+import { Keyboard, Mousewheel } from 'swiper/modules';
 
-
-const reviewsList = document.querySelector(".reviews-list");
+const reviewsList = document.querySelector('.reviews-list');
 const prevButton = document.querySelector('.reviews-btn-prev');
 const nextButton = document.querySelector('.reviews-btn-next');
 
 let swiper;
 
 function loadReviews() {
-  axios.get('https://portfolio-js.b.goit.study/api/reviews')
+  axios
+    .get('https://portfolio-js.b.goit.study/api/reviews')
     .then(response => {
       createReviews(response.data);
     })
@@ -25,28 +25,33 @@ function loadReviews() {
         position: 'center',
         timeout: 5000,
       });
-        console.error('Помилка при отриманні відгуків:', error);
-        reviewsList.insertAdjacentHTML("beforeend", `<li class="review-item error">Not found</li>`);
-        hideButtons();
+      console.error('Помилка при отриманні відгуків:', error);
+      reviewsList.insertAdjacentHTML(
+        'beforeend',
+        `<li class="review-item error">Not found</li>`
+      );
+      hideButtons();
     });
 }
 
 // обсервер
 const reviewsSection = document.querySelector('#reviews-section');
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      loadReviews(); 
-      observer.unobserve(reviewsSection); 
-    }
-  });
-}, { threshold: 0.5 }); 
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        loadReviews();
+        observer.unobserve(reviewsSection);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
 
 observer.observe(reviewsSection);
 
-
-function createReviews(reviews) {      
+function createReviews(reviews) {
   const markup = reviews
     .map(review => {
       return `
@@ -56,63 +61,62 @@ function createReviews(reviews) {
         <p class="text review-text">${review.review}</p>
       </li>
       `;
-    })    
-    .join("");
-  
-  reviewsList.insertAdjacentHTML("beforeend", markup);
-  
-   initSwiper();
+    })
+    .join('');
+
+  reviewsList.insertAdjacentHTML('beforeend', markup);
+
+  initSwiper();
 }
 
 function initSwiper() {
   swiper = new Swiper('.swiper-reviews', {
     modules: [Keyboard, Mousewheel],
-    slidesPerView: 1, 
-    spaceBetween: 16, 
+    spaceBetween: 16,
     loop: false,
     keyboard: {
       enabled: true,
       onlyInViewport: true,
+    },
+    mousewheel: {
+      forceToAxis: true,
+      releaseOnEdges: true,
+    },
+    grabCursor: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
       },
-     mousewheel: {
-    forceToAxis: true, 
-    releaseOnEdges: true, 
-      },    
-  grabCursor: true,
-      breakpoints: {
-          768: {
+      768: {
         slidesPerView: 2,
-          },
-          1440: {
-              slidesPerView: 4,              
-          }
-}
-  });    
-    
-    prevButton.addEventListener('click', () => {
-      swiper.slidePrev();
-      updateButtonState();
-  }); 
-
-   nextButton.addEventListener('click', () => {
-       swiper.slideNext();
-       updateButtonState();
+      },
+      1440: {
+        slidesPerView: 4,
+      },
+    },
   });
 
-swiper.on('slideChange', updateButtonState);
+  prevButton.addEventListener('click', () => {
+    swiper.slidePrev();
+    updateButtonState();
+  });
 
-updateButtonState();
-  
+  nextButton.addEventListener('click', () => {
+    swiper.slideNext();
+    updateButtonState();
+  });
+
+  swiper.on('slideChange', updateButtonState);
+
+  updateButtonState();
 }
 
+function updateButtonState() {
+  prevButton.disabled = swiper.isBeginning;
+  prevButton.classList.toggle('disabled', swiper.isBeginning);
 
-function updateButtonState() { 
-
-  prevButton.disabled = swiper.isBeginning; 
-  prevButton.classList.toggle('disabled', swiper.isBeginning); 
-
-  nextButton.disabled = swiper.isEnd; 
-  nextButton.classList.toggle('disabled', swiper.isEnd); 
+  nextButton.disabled = swiper.isEnd;
+  nextButton.classList.toggle('disabled', swiper.isEnd);
 }
 
 function hideButtons() {
@@ -121,11 +125,3 @@ function hideButtons() {
     buttonsContainer.classList.add('hide');
   }
 }
-
-
-
-
-
-
-
-
