@@ -6,23 +6,47 @@
     </h2>
 
     <div class="about-me-section">
-      <div class="about-me-introduction">
-        <p class="about-me-content">
-          I work with people all over the world to create impressive and
-          <span class="accent-word-red">functional</span>
-          <span class="accent-word-grey">websites</span> that reflect each
-          client's unique personality.
-        </p>
-      </div>
-      <!-- Контентне зображення -->
-      <img
-        src="../img/about-me/image.png"
-        alt="Lloyd Jefferson working on laptop"
-        class="about-me-img"
-      />
+      <p class="about-me-content about-me-introduction">
+        I work with people all over the world to create impressive and
+        <span class="accent-word-red">functional</span>
+        <span class="accent-word-grey">websites</span> that reflect each
+        client's unique personality.
+      </p>
+      <picture>
+        <source
+          srcset="
+            ./img/about-me/image-desktop@1x.webp 1x,
+            ./img/about-me/image-desktop@2x.webp 2x
+          "
+          media="(min-width: 1440px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./img/about-me/image-tablet@1x.webp 1x,
+            ./img/about-me/image-tablet@2x.webp 2x
+          "
+          media="(min-width: 768px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./img/about-me/image-mobile@1x.webp 1x,
+            ./img/about-me/image-mobile@2x.webp 2x
+          "
+          media="(max-width: 767px)"
+          type="image/jpeg"
+        />
+        <img
+          src="./img/about-me/image-mobile@1x.webp"
+          alt="Lloyd Jefferson working on laptop"
+          class="about-me-img"
+          width="704"
+          height="700"
+        />
+      </picture>
     </div>
 
-    <!-- Accordion секції -->
     <ul class="accordion" id="about-me-accordion">
       <li class="accordion-item active ac">
         <div class="accordion-line ac-header ac-trigger">
