@@ -1,25 +1,16 @@
 import Accordion from 'accordion-js';
-import 'accordion-js/dist/accordion.min.css';
-
 import Swiper from 'swiper';
 import { Mousewheel, Keyboard } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/mousewheel';
 
 const container = document.querySelector('#about-me-accordion');
+const swWrap = document.querySelector('#skills-swiper');
+const nextButton = document.querySelector('.skills-btn-next');
 
 const accordion = new Accordion(container, {
   duration: 400,
   showMultiple: true,
   openOnInit: [0],
-
-  onOpen: function (currentElement) {
-    console.log(currentElement);
-  },
 });
-
-
-const swWrap = document.querySelector('#skills-swiper');
 
 const swiper = new Swiper(swWrap, {
   modules: [Mousewheel, Keyboard],
@@ -50,8 +41,6 @@ const swiper = new Swiper(swWrap, {
   },
 });
 
-const nextButton = document.querySelector('.skills-btn-next');
-
 nextButton.addEventListener('click', () => {
-  swiper.slideNext(); //перехід нанаступний слайд
+  swiper.slideNext();
 });

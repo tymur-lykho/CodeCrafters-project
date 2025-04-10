@@ -1,6 +1,5 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
 import { showThankWindow } from './modal-window';
 
 const form = document.getElementById('js-footer-form');

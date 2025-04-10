@@ -1,9 +1,6 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
 import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/mousewheel';
 import { Keyboard, Mousewheel } from 'swiper/modules';
 
 const reviewsList = document.querySelector('.reviews-list');
@@ -34,7 +31,6 @@ function loadReviews() {
     });
 }
 
-// обсервер
 const reviewsSection = document.querySelector('#reviews-section');
 
 const observer = new IntersectionObserver(
