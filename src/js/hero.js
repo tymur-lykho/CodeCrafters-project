@@ -1,46 +1,72 @@
+const lines = ['HELLO.', 'I’M FULLSTACK DEVELOPER', 'LLOYD JEFFERSON.'];
+
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroObserver();
+  generateHeroTitleAnimation();
+});
+
+function initHeroObserver() {
+  const heroSection = document.querySelector('.hero');
+  if (!heroSection) return;
+
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        document.querySelector('.hero').classList.add('visible');
+        heroSection.classList.add('visible');
       }
     },
     { threshold: 0.2 }
   );
-  observer.observe(document.querySelector('.hero'));
 
+  observer.observe(heroSection);
+}
+
+function generateHeroTitleAnimation() {
   const title = document.querySelector('.hero-title');
-  const lines = ['HELLO.', 'I’M FULLSTACK DEVELOPER', 'LLOYD JEFFERSON.'];
+  if (!title) return;
+  title.innerHTML = '';
+  title.style = 'opacity: 1';
 
   let delay = 0;
   const baseDelay = 0.08;
 
   lines.forEach(line => {
-    const lineWrapper = document.createElement('div');
-    lineWrapper.classList.add('fade-line');
+    const lineWrapper = createLineElement(line, delay, baseDelay);
+    title.appendChild(lineWrapper);
+    delay += line.length * baseDelay;
+  });
+}
 
-    const words = line.split(' ');
-    words.forEach((word, wordIdx) => {
-      const wordSpan = document.createElement('span');
-      wordSpan.classList.add('fade-word');
+function createLineElement(line, startDelay, baseDelay) {
+  const lineWrapper = document.createElement('div');
+  lineWrapper.classList.add('fade-line');
 
-      [...word].forEach(char => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.classList.add('fade-char');
-        span.style.animationDelay = `${delay}s`;
-        wordSpan.appendChild(span);
-        delay += baseDelay;
-      });
+  let delay = startDelay;
+  const words = line.split(' ');
 
-      lineWrapper.appendChild(wordSpan);
+  words.forEach((word, index) => {
+    const wordSpan = document.createElement('span');
+    wordSpan.classList.add('fade-word');
 
-      if (wordIdx < words.length - 1) {
-        const space = document.createTextNode(' ');
-        lineWrapper.appendChild(space);
-      }
+    [...word].forEach(char => {
+      const charSpan = document.createElement('span');
+      charSpan.textContent = char;
+      charSpan.classList.add('fade-char');
+      charSpan.style.animationDelay = `${delay}s`;
+      wordSpan.appendChild(charSpan);
+      delay += baseDelay;
     });
 
-    title.appendChild(lineWrapper);
+    lineWrapper.appendChild(wordSpan);
+
+    if (index < words.length - 1) {
+      lineWrapper.appendChild(document.createTextNode(' '));
+    }
   });
+
+  return lineWrapper;
+}
+
+document.querySelectorAll('.animate-icons li').forEach((li, i) => {
+  li.style.animationDelay = `${0.3 + i * 0.2}s`;
 });
