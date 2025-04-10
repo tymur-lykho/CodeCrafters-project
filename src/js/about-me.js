@@ -1,46 +1,57 @@
-import accordion from "accordion-js";
-import "accordion-js/dist/accordion.min.css";
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
+
+import Swiper from 'swiper';
+import { Mousewheel, Keyboard } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/mousewheel';
+
+const container = document.querySelector('#about-me-accordion');
+
+const accordion = new Accordion(container, {
+  duration: 400,
+  showMultiple: true,
+  openOnInit: [0],
+
+  onOpen: function (currentElement) {
+    console.log(currentElement);
+  },
+});
 
 
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const accordionItem = header.closest('.accordion-item');
-      const icon = header.querySelector('.accordion-icon');
+const swWrap = document.querySelector('#skills-swiper');
 
-      // Закрити, якщо активний
-      if (accordionItem.classList.contains('active')) {
-        accordionItem.classList.remove('active');
-        icon.src = '../img/about-me/arrow-down.svg';
-      } else {
-        // Закрити всі інші (якщо потрібно)
-        document.querySelectorAll('.accordion-item').forEach(item => {
-          item.classList.remove('active');
-          const itemIcon = item.querySelector('.accordion-icon');
-          if (itemIcon) itemIcon.src = '../img/about-me/arrow-down.svg';
-        });
+const swiper = new Swiper(swWrap, {
+  modules: [Mousewheel, Keyboard],
+  spaceBetween: 0,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  mousewheel: {
+    sensitivity: 3,
+    releaseOnEdges: false,
+  },
+  autoplay: {
+    delay: 3000,
+  },
+  grabCursor: true,
+  loop: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1440: {
+      slidesPerView: 6,
+    },
+  },
+});
 
-        // Відкрити поточний
-        accordionItem.classList.add('active');
-        icon.src = '../img/about-me/arrow-up.svg';
-      }
-    });
-  });
+const nextButton = document.querySelector('.skills-btn-next');
 
-
-//   // Swiper
-//   const swiper = new Swiper(".swiper", {
-//     loop: true,
-//     slidesPerView: 3,
-//     spaceBetween: 20,
-//     navigation: {
-//       nextEl: ".swiper-button-next",
-//       prevEl: ".swiper-button-prev",
-//     },
-//     keyboard: {
-//       enabled: true,
-//       onlyInViewport: true,
-//     },
-//     a11y: true,
-//     grabCursor: true,
-//   });
-
+nextButton.addEventListener('click', () => {
+  swiper.slideNext(); //перехід нанаступний слайд
+});

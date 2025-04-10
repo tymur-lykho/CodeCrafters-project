@@ -1,71 +1,151 @@
 <section class="about-me">
- <container class="snake-case">
+  <div class="container">
     <!-- Прихований заголовок -->
-    <h1 class="visually-hidden">About Lloyd Jefferson – Frontend Developer Portfolio</h1>
-  
-    <div class="about-me-div">
-      <div class="about-me-introduction">
-        <p class="about-me-content">
-          I work with people all over the world to create impressive and 
-          <span class="about-me-span1">functional</span> 
-          <span class="about-me-span2">websites</span> that reflect each client's unique personality.
-        </p>
-      </div>
-      <!-- Контентне зображення -->
-      <img src="../img/about-me/image.png" alt="Lloyd Jefferson working on laptop" class="about-me-img"/>
+    <h2 class="visually-hidden">
+      About Lloyd Jefferson – Frontend Developer Portfolio
+    </h2>
+
+    <div class="about-me-section">
+      <p class="about-me-content about-me-introduction">
+        I work with people all over the world to create impressive and
+        <span class="accent-word-red">functional</span>
+        <span class="accent-word-grey">websites</span> that reflect each
+        client's unique personality.
+      </p>
+      <picture>
+        <source
+          srcset="
+            ./img/about-me/image-desktop@1x.webp 1x,
+            ./img/about-me/image-desktop@2x.webp 2x
+          "
+          media="(min-width: 1440px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./img/about-me/image-tablet@1x.webp 1x,
+            ./img/about-me/image-tablet@2x.webp 2x
+          "
+          media="(min-width: 768px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./img/about-me/image-mobile@1x.webp 1x,
+            ./img/about-me/image-mobile@2x.webp 2x
+          "
+          media="(max-width: 767px)"
+          type="image/jpeg"
+        />
+        <img
+          src="./img/about-me/image-mobile@1x.webp"
+          alt="Lloyd Jefferson working on laptop"
+          class="about-me-img"
+          width="704"
+          height="700"
+        />
+      </picture>
     </div>
-  
-    <!-- Accordion секції -->
-    <ul class="accordion">
-      <li class="accordion-item active">
-            <button class="accordion-header ">  <span class="accordion-span">About Me</span>
-            <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" /></button>
-        <div class="accordion-body">
-          <p class="accordion-text">I am Lloyd Jefferson, a talented programmer with extensive expertise in software development. I have an understanding of different programming languages and technologies, always ready to improve my skills. I always follow the latest trends and look for unconventional, creative solutions to problems. I have a high level of analytical skills and am able to effectively solve even the most difficult tasks encountered on the way.</p>
-          <p>Able to work both independently and in a team. I can effectively cooperate with colleagues, exchanging ideas and finding optimal solutions. Professional maturity allows you to calmly cope with challenges and stressful situations, while maintaining a high quality of work. I am always looking for opportunities for self-improvement. I actively study new technologies and practices to stay abreast of the latest innovations. I have a strong understanding of various programming languages, frameworks and architectural concepts that allow me to create efficient and scalable software.</p>
+
+    <ul class="accordion" id="about-me-accordion">
+      <li class="accordion-item active ac">
+        <div class="accordion-line ac-header ac-trigger">
+          <h3 class="accordion-title">About Me</h3>
+          <button class="accordion-header ac-trigger ac-btn">
+            <svg class="ac-btn-icon" width="20" height="20">
+              <use href="./img/sprite.svg#simple-arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="accordion-body ac-panel">
+          <p class="accordion-text ac-text">
+            I am Lloyd Jefferson, a talented programmer with extensive expertise
+            in software development. I have an understanding of different
+            programming languages and technologies, always ready to improve my
+            skills. I always follow the latest trends and look for
+            unconventional, creative solutions to problems. I have a high level
+            of analytical skills and am able to effectively solve even the most
+            difficult tasks encountered on the way.
+          </p>
+          <p class="accordion-text ac-text">
+            Able to work both independently and in a team. I can effectively
+            cooperate with colleagues, exchanging ideas and finding optimal
+            solutions. Professional maturity allows you to calmly cope with
+            challenges and stressful situations, while maintaining a high
+            quality of work. I am always looking for opportunities for
+            self-improvement. I actively study new technologies and practices to
+            stay abreast of the latest innovations. I have a strong
+            understanding of various programming languages, frameworks and
+            architectural concepts that allow me to create efficient and
+            scalable software.
+          </p>
         </div>
       </li>
-      <li class="accordion-item active">
-        <button class="accordion-header">  <span class="accordion-span">Role</span>
-            <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" /></button>
-        <div class="accordion-body ">
-          <ul>
+      <li class="accordion-item active ac">
+        <div class="accordion-line ac-header ac-trigger">
+          <h3 class="accordion-title">Role</h3>
+          <button class="accordion-header ac-trigger ac-btn">
+            <svg class="ac-btn-icon" width="20" height="20">
+              <use href="./img/sprite.svg#simple-arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="accordion-body ac-panel">
+          <ul class="ac-text">
             <li class="accordion-list">Frontend development</li>
             <li class="accordion-list">HeadlessCMS, Wordpress</li>
             <li class="accordion-list">Blender (enjoy)</li>
           </ul>
         </div>
       </li>
-      <li class="accordion-item active">
-        <button class="accordion-header"> <span class="accordion-span">Education</span>
-            <img src="../img/about-me/arrow-up.svg" alt="arrow icon" class="accordion-icon" /></button>
-        <div class="accordion-body">
-          <ul >
-            <li class="accordion-list">2018 - 2019 / Frontend Development Diploma, GoIT</li>
-            <li class="accordion-list">2019 - 2020 / Advanced Web Development Certificate</li>
-            <li class="accordion-list">2020 - 2022 / Blender Animation Techniques, Udemy</li>
+      <li class="accordion-item active ac">
+        <div class="accordion-line ac-header ac-trigger">
+          <h3 class="accordion-title">Education</h3>
+          <button class="accordion-header ac-trigger ac-btn">
+            <svg class="ac-btn-icon" width="20" height="20">
+              <use href="./img/sprite.svg#simple-arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="ac-panel">
+          <ul class="ac-text">
+            <li class="accordion-list">
+              2018 - 2019 / Frontend Development Diploma, GoIT
+            </li>
+            <li class="accordion-list">
+              2019 - 2020 / Advanced Web Development Certificate
+            </li>
+            <li class="accordion-list">
+              2020 - 2022 / Blender Animation Techniques, Udemy
+            </li>
           </ul>
         </div>
       </li>
     </ul>
-  
-    <!-- Swiper для навичок -->
-    <!-- <div class="skills-slider swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">HTML/CSS</div>
-        <div class="swiper-slide">JavaScript</div>
-        <div class="swiper-slide">React</div>
-        <div class="swiper-slide">Node.js</div>
-        <div class="swiper-slide">React Native</div>
-        <div class="swiper-slide">Soft skills</div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div> -->
 
-    <script>
-        new Accordion(".accordion-container");
-      </script>
-  </container>
+    <div class="skills" role="region" aria-label="Slider of skills">
+      <div class="swiper" id="skills-swiper">
+        <ul class="swiper-wrapper skills-list">
+          <li class="swiper-slide skills-item"><p>HTML/CSS</p></li>
+          <li class="swiper-slide skills-item"><p>JavaScript</p></li>
+          <li class="swiper-slide skills-item"><p>React</p></li>
+          <li class="swiper-slide skills-item"><p>Node.js</p></li>
+          <li class="swiper-slide skills-item"><p>React Native</p></li>
+          <li class="swiper-slide skills-item"><p>Soft skills</p></li>
+          <li class="swiper-slide skills-item"><p>HTML/CSS</p></li>
+          <li class="swiper-slide skills-item"><p>JavaScript</p></li>
+          <li class="swiper-slide skills-item"><p>React</p></li>
+          <li class="swiper-slide skills-item"><p>Node.js</p></li>
+          <li class="swiper-slide skills-item"><p>React Native</p></li>
+          <li class="swiper-slide skills-item"><p>Soft skills</p></li>
+        </ul>
+      </div>
+
+      <button type="button" class="skills-btn-next">
+        <svg class="skills-btn-icon" width="24" height="24">
+          <use href="./img/sprite.svg#arrow-narrow"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>
-  
