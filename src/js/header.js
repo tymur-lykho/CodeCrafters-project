@@ -25,8 +25,27 @@ const closeBurgerAnimation = new Animation(closeKeyframe, document.timeline);
 
 burgerBtn.addEventListener('click', handleBurgerClick);
 
-menuBtn.addEventListener('click', () => {
+const toggleMenu = () => {
   menuList.classList.toggle('is-open');
+};
+
+menuBtn.addEventListener('click', e => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+menuList.addEventListener('click', e => {
+  if (e.target.classList.contains('list-item-link')) {
+    menuList.classList.remove('is-open');
+  }
+});
+
+document.addEventListener('click', e => {
+  const isClickInside =
+    menuList.contains(e.target) || menuBtn.contains(e.target);
+  if (!isClickInside) {
+    menuList.classList.remove('is-open');
+  }
 });
 
 function handleBurgerClick() {

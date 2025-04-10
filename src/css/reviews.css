@@ -1,119 +1,127 @@
-.title {
-    font-size: 16px;
-    font-weight: 600;       
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    color: rgba(250, 250, 250, 0.4);    
+.reviews {
+  padding-bottom: 64px;
 }
-.reviews-list {    
-    display: flex;
-    list-style-type: none;
-    margin: 32px auto;
+@media only screen and (min-width: 768px) {
+  .reviews {
+    padding-bottom: 96px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .reviews {
+    padding-bottom: 164px;
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+}
+.reviews-list {
+  display: flex;
+  list-style-type: none;
+  margin: 32px auto;
 }
 .review-item {
-    display: flex;
-    flex-direction: column;
-       
-    border: 1px solid rgba(250, 250, 250, 0.2);
-    border-radius: 20px;
-    padding: 32px 24px;
-    width: 332px;
-    height: auto !important;        
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 332px;
+  height: auto !important;
 }
 .review-img {
-    border-radius: 10px;
-    margin-bottom: 32px;
+  border-radius: 10px;
+  margin-bottom: 32px;
 }
-.review-author {    
-    font-weight: 600;
-    font-size: 20px;    
-    letter-spacing: -0.02em;    
-    margin-bottom: 8px;    
+.review-author {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
 }
-.review-text {    
-    line-height: 1.5;
-    letter-spacing: -0.02em;
-    color: rgba(250, 250, 250, 0.6);    
+.review-text {
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
 }
 .error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    padding: 32px;
-    margin: 0 auto;
-    border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding: 32px;
+  margin: 0 auto;
+  border: none;
 }
 
-/*Контейнер для стрілок*/
-
 .reviews-btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 @media only screen and (min-width: 768px) {
-    .reviews-btn-container {
-        gap: 20px;
-        }
+  .reviews-btn-container {
+    gap: 20px;
+  }
 }
 
-/*початок однакових класів*/
 .arrow-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    border: 1px solid rgba(250, 250, 250, 0.5);
-    border-radius: 60px;
-    width: 52px;
-    height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    background-color: transparent;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  border-radius: 60px;
+  width: 52px;
+  height: 52px;
+
+  background-color: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arrow-btn:not(.disabled):hover,
 .arrow-btn:not(.disabled):focus {
-    background: #e0373f;
-    border: none;
+  background: #e0373f;
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
-    .arrow-btn {
-        width: 68px;
-        height: 68px;
-    }
+  .arrow-btn {
+    width: 68px;
+    height: 68px;
+  }
 }
-/*кінець однакових класів*/
 
 .icon-arrow-right {
-    stroke: #fafafa;
+  stroke: #fafafa;
 }
 
 @media only screen and (min-width: 768px) {
-    .icon-arrow-right {
-        width: 32px;
-        height: 32px;
-    }
+  .icon-arrow-right {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .disabled {
-    border: 1px solid rgba(250, 250, 250, 0.2);
-    cursor: default;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  cursor: default;
 }
 .disabled .icon-arrow-right {
-    stroke: #3b3b3b;
+  stroke: #3b3b3b;
 }
-
-
 
 .reviews-btn-prev {
-    transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 .reviews-btn-container.hide {
-    display: none;
+  display: none;
 }
