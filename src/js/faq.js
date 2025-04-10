@@ -1,19 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const accordionButtons = document.querySelectorAll('.acc-btn');
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
 
-  accordionButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const accordionItem = this.closest('.accordion-item');
-      const content = accordionItem.querySelector('.accordion-content');
+const container = document.querySelector('#faq-accordion');
 
-      // Перемикаємо клас для відкриття/закриття
-      accordionItem.classList.toggle('active');
-
-      if (accordionItem.classList.contains('active')) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else {
-        content.style.maxHeight = '0';
-      }
-    });
-  });
+const accordion = new Accordion(container, {
+  duration: 400,
+  showMultiple: true,
 });
