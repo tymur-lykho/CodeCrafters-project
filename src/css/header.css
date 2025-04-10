@@ -111,13 +111,8 @@
   left: 50%;
   transform: translateX(-50%);
 
-
   visibility: hidden;
-  transition:
-    opacity 300ms ease,
-    transform 300ms ease,
-    visibility 300ms ease;
-
+  transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
 }
 .menu-list.is-open {
   opacity: 1;
@@ -130,9 +125,8 @@
   animation-duration: 4s;
   animation-name: fade-in;
 
-  visibility: visible; 
+  visibility: visible;
   pointer-events: auto;
-
 }
 
 .visually-hidden {
@@ -228,19 +222,21 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100dvh;
+  height: 100%;
   transform: translateX(100%);
-
-  background: linear-gradient(to right,
-  #ce3138 0%, 
-  #9d2d31 25%, 
-  #69292d 50%, 
-  #2e2e31 75%, 
-  #1c1d20 100%);
+  /* ! */
+  background: linear-gradient(
+    to right,
+    #ce3138 0%,
+    #9d2d31 25%,
+    #69292d 50%,
+    #2e2e31 75%,
+    #1c1d20 100%
+  );
 }
-
+/* ! */
 .mobile-menu::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background-image: repeating-linear-gradient(
@@ -254,11 +250,6 @@
   z-index: 1;
 }
 
-
-
-
-
-
 .mobile-menu.is-open {
   transform: translateX(0);
   opacity: 1;
@@ -268,21 +259,18 @@
 
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  top: 32px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
 }
 
 .close-icon {
-  display: inline-block;
   width: 28px;
   height: 28px;
-  background-image: url("data:image/svg+xml,%3Csvg%20viewBox='0%200%2024%2024'%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cpath%20d='M12%2010.586L6.707%205.293%205.293%206.707%2010.586%2012l-5.293%205.293%201.414%201.414L12%2013.414l5.293%205.293%201.414-1.414L13.414%2012l5.293-5.293-1.414-1.414L12%2010.586z'%20fill='%23ffffff'%2F%3E%3C%2Fsvg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
 }
 
 .mobail-menu-list {
@@ -331,7 +319,6 @@
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
- 
 }
 
 .mobail-order-btn:hover,

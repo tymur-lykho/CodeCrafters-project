@@ -28,6 +28,8 @@ button {
   cursor: pointer;
   border: none;
   color: currentColor;
+  padding: 0;
+  background-color: transparent;
 }
 
 img {
